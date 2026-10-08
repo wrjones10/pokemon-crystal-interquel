@@ -31,3 +31,24 @@ Do not assume Yellow and Crystal use identical map, event, graphics, or memory s
 ## Design Philosophy
 
 The objective is to recreate and expand the experience of Pokémon Red/Blue/Yellow using Crystal's more advanced engine, not to recreate Generation 1's technical limitations.
+
+## Reference Implementations
+
+Two Generation 1 reference repositories are available:
+
+- `pokeyellow` — Pokémon Yellow disassembly
+- `pokered` — Pokémon Red/Blue disassembly
+
+Use these repositories to understand Generation 1
+map layouts, NPCs, dialogue, events, progression,
+and game mechanics.
+
+When implementing Gen 1 content:
+1. Compare the Red/Blue and Yellow implementations.
+2. Identify relevant differences.
+3. Recommend which version best fits the interquel.
+4. Translate the desired behavior into Crystal's
+   native engine systems.
+
+Never modify the reference repositories.
+Only modify pokemon-crystal-interquel.
