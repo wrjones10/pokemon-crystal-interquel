@@ -13,18 +13,23 @@ RedHouse1FNoopScene:
 RedsMom:
 	faceplayer
 	opentext
-	checkevent EVENT_MET_REDS_MOM
-	iftrue .MetAlready
-	writetext RedsMomText1
-	waitbutton
-	closetext
-	setevent EVENT_MET_REDS_MOM
-	end
-.MetAlready:
-	writetext RedsMomText2
+	checkevent EVENT_GOT_A_POKEMON_FROM_OAK
+	iftrue .Heal
+	writetext RedsMomOpeningText
 	waitbutton
 	closetext
 	end
+.Heal:
+	writetext RedsMomRestText
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	special HealParty
+	playmusic MUSIC_HEAL
+	pause 60
+	special FadeInFromBlack
+	special RestartMapMusic
+	jumptext RedsMomHealedText
 
 RedsHouse1FTV:
 	jumptext RedsHouse1FTVText
@@ -32,44 +37,38 @@ RedsHouse1FTV:
 RedsHouse1FBookshelf:
 	jumpstd PictureBookshelfScript
 
-RedsMomText1:
-	text "Hi!"
+RedsMomOpeningText:
+	text "MOM: Good morning,"
+	line "<PLAYER>!"
 
-	para "RED's been away"
-	line "for a long time."
+	para "PROF.OAK was"
+	line "looking for you."
 
-	para "He hasn't called"
-	line "either, so I have"
-
-	para "no idea where he"
-	line "is or what he's"
-	cont "been doing."
-
-	para "They say that no"
-	line "word is proof that"
-
-	para "he's doing fine,"
-	line "but I do worry"
-	cont "about him."
+	para "His lab is here"
+	line "in PALLET TOWN."
+	cont "Go see him!"
 	done
 
-RedsMomText2:
-	text "I worry about RED"
-	line "getting hurt or"
+RedsMomRestText:
+	text "MOM: You and your"
+	line "#MON should"
+	cont "take a quick rest."
+	done
 
-	para "sick, but he's a"
-	line "boy. I'm proud"
-
-	para "that he is doing"
-	line "what he wants to"
-
-	para "do."
+RedsMomHealedText:
+	text "MOM: Looking good!"
+	line "Take care of"
+	cont "yourself, honey!"
 	done
 
 RedsHouse1FTVText:
-	text "They have programs"
-	line "that aren't shown"
-	cont "in JOHTO…"
+	text "A movie is on TV."
+
+	para "Four boys are"
+	line "walking along"
+	cont "railroad tracks."
+
+	para "I had better go!"
 	done
 
 RedsHouse1F_MapEvents:

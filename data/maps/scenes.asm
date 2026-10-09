@@ -5,6 +5,8 @@ MACRO scene_var
 ENDM
 
 MapScenes::
+	scene_var PALLET_TOWN, wPalletTownSceneID
+	scene_var OAKS_LAB, wOaksLabSceneID
 	scene_var POKECENTER_2F,                               wPokecenter2FSceneID
 	scene_var TRADE_CENTER,                                wTradeCenterSceneID
 	scene_var COLOSSEUM,                                   wColosseumSceneID

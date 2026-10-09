@@ -1,9 +1,12 @@
 	object_const_def
 	const PALLETTOWN_TEACHER
 	const PALLETTOWN_FISHER
+	const PALLETTOWN_OAK
 
 PalletTown_MapScripts:
 	def_scene_scripts
+	scene_script PalletTownNoopScene, SCENE_PALLETTOWN_OAK_STOPS_PLAYER
+	scene_script PalletTownNoopScene, SCENE_PALLETTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, PalletTownFlypointCallback
@@ -11,6 +14,107 @@ PalletTown_MapScripts:
 PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
+
+PalletTownNoopScene:
+	end
+
+PalletTownOakStopsPlayerLeft:
+	moveobject PALLETTOWN_OAK, 8, 3
+	scall PalletTownOakWarning
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, PalletTownOakEscortLeft
+	sjump PalletTownFinishEscort
+
+PalletTownOakStopsPlayerRight:
+	moveobject PALLETTOWN_OAK, 9, 3
+	scall PalletTownOakWarning
+	follow PALLETTOWN_OAK, PLAYER
+	applymovement PALLETTOWN_OAK, PalletTownOakEscortRight
+PalletTownFinishEscort:
+	stopfollow
+	disappear PALLETTOWN_OAK
+	applymovement PLAYER, PalletTownPlayerEntersLab
+	setevent EVENT_FOLLOWED_OAK_TO_LAB
+	setscene SCENE_PALLETTOWN_NOOP
+	warp OAKS_LAB, 5, 10
+	end
+
+PalletTownOakWarning:
+	playmusic MUSIC_PROF_OAK
+	opentext
+	writetext PalletTownOakWaitText
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, PLAYER, 15
+	appear PALLETTOWN_OAK
+	applymovement PALLETTOWN_OAK, PalletTownOakApproach
+	turnobject PLAYER, DOWN
+	opentext
+	writetext PalletTownOakUnsafeText
+	waitbutton
+	closetext
+	end
+
+PalletTownOakApproach:
+	step UP
+	step_end
+
+PalletTownPlayerEntersLab:
+	step UP
+	step_end
+
+PalletTownOakEscortLeft:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PalletTownOakEscortRight:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
+
+PalletTownOakWaitText:
+	text "OAK: Hey! Wait!"
+	line "Don't go out!"
+	done
+
+PalletTownOakUnsafeText:
+	text "OAK: It's unsafe!"
+	line "Wild #MON live"
+	cont "in tall grass!"
+
+	para "You need your own"
+	line "#MON for your"
+	cont "protection."
+
+	para "Here, come with"
+	line "me!"
+	done
 
 PalletTownTeacherScript:
 	jumptextfaceplayer PalletTownTeacherText
@@ -55,7 +159,7 @@ PalletTownSignText:
 	done
 
 RedsHouseSignText:
-	text "RED'S HOUSE"
+	text "<PLAYER>'S HOUSE"
 	done
 
 OaksLabSignText:
@@ -76,6 +180,8 @@ PalletTown_MapEvents:
 	warp_event 12, 11, OAKS_LAB, 1
 
 	def_coord_events
+	coord_event 8, 1, SCENE_PALLETTOWN_OAK_STOPS_PLAYER, PalletTownOakStopsPlayerLeft
+	coord_event 9, 1, SCENE_PALLETTOWN_OAK_STOPS_PLAYER, PalletTownOakStopsPlayerRight
 
 	def_bg_events
 	bg_event  7,  9, BGEVENT_READ, PalletTownSign
@@ -86,3 +192,4 @@ PalletTown_MapEvents:
 	def_object_events
 	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
 	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event 8, 3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PALLET_TOWN_OAK

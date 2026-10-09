@@ -478,6 +478,9 @@ BugContestResults_CopyContestantsToResults:
 	end
 
 InitializeEventsScript:
+	setevent EVENT_OAKS_LAB_OAK
+	setevent EVENT_OAKS_LAB_RIVAL
+	setevent EVENT_PALLET_TOWN_OAK
 	setevent EVENT_EARLS_ACADEMY_EARL
 	setevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	setevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER

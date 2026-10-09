@@ -3226,7 +3226,10 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+; Pallet opening scenes use reserved bytes to preserve the save layout.
+wPalletTownSceneID:: db
+wOaksLabSceneID:: db
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

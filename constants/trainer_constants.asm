@@ -703,4 +703,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
+	trainerclass PALLET_RIVAL ; 44
+	const PALLET_RIVAL_BULBASAUR
+	const PALLET_RIVAL_CHARMANDER
+	const PALLET_RIVAL_SQUIRTLE
+
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

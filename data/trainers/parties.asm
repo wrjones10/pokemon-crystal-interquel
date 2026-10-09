@@ -3495,3 +3495,19 @@ MysticalmanGroup:
 	db 23, HAUNTER,    LICK, HYPNOSIS, MEAN_LOOK, CURSE
 	db 25, ELECTRODE,  SCREECH, SONICBOOM, THUNDER, ROLLOUT
 	db -1 ; end
+
+PalletRivalGroup:
+	; PALLET_RIVAL (BULBASAUR) -- unnamed rival, using Blue's artwork
+	db "???@", TRAINERTYPE_ITEM
+	db 5, BULBASAUR, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL (CHARMANDER) -- unnamed rival, using Blue's artwork
+	db "???@", TRAINERTYPE_ITEM
+	db 5, CHARMANDER, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL (SQUIRTLE) -- unnamed rival, using Blue's artwork
+	db "???@", TRAINERTYPE_ITEM
+	db 5, SQUIRTLE, NO_ITEM
+	db -1 ; end

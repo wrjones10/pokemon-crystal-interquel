@@ -2,12 +2,27 @@ RedsHouse2F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, RedsHouse2FInitializeCallback
+
+RedsHouse2FInitializeCallback:
+	checkevent EVENT_INITIALIZED_EVENTS
+	iftrue .Done
+	jumpstd InitializeEventsScript
+.Done:
+	endcallback
 
 RedsHouse2FN64Script:
 	jumptext RedsHouse2FN64Text
 
 RedsHouse2FPCScript:
-	jumptext RedsHouse2FPCText
+	opentext
+	special PlayersHousePC
+	iftrue .Warp
+	closetext
+	end
+.Warp:
+	warp NONE, 0, 0
+	end
 
 RedsHouse2FN64Text:
 	text "<PLAYER> played the"
@@ -15,12 +30,6 @@ RedsHouse2FN64Text:
 
 	para "Better get going--"
 	line "no time to lose!"
-	done
-
-RedsHouse2FPCText:
-	text "It looks like it"
-	line "hasn't been used"
-	cont "in a long time…"
 	done
 
 RedsHouse2F_MapEvents:

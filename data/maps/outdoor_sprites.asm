@@ -49,7 +49,7 @@ PalletGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_BLUE
-	db SPRITE_GRAMPS
+	db SPRITE_OAK ; Pallet opening escort (replaces unused GRAMPS slot)
 	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_SWIMMER_GIRL
