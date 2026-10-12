@@ -659,6 +659,10 @@ SECTION "Debug Room", ROMX
 
 if DEF(_DEBUG)
 INCLUDE "engine/debug/debug_room.asm"
+
+SECTION "Debug Player Radio", ROMX
+
+INCLUDE "engine/debug/player_radio.asm"
 endc
 
 

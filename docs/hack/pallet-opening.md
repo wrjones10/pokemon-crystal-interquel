@@ -62,6 +62,15 @@ an unflagged object inside that callback alone is undone during map loading.
 The flags are recomputed on entry, so early lab visits remain safe on existing
 opening saves as well as fresh games.
 
+The connected Pallet, Viridian, Pewter and Cinnabar outdoor groups share one
+sprite list containing both Oak and Gramps. Connections retain loaded graphics,
+so different lists can leave NPCs using the player's graphics or stale tile slots
+after a battle. Oak replaces the unused Will placeholder. The shared ordering
+keeps all walking NPCs in the first VRAM table; Cinnabar's stationary Blue uses
+the second table, with standing facings available for turning and teleporting.
+The sprite loader also preserves its loop counter when looking up graphics banks,
+including bank 1 used by the surfing player sprites.
+
 ## Validation
 
 `make` and `git diff --check` are required. Static checks cover both escort paths,

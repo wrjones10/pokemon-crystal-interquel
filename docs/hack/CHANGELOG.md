@@ -13,6 +13,8 @@ Last updated: October 12, 2026.
 - After the speech, the player gains control upstairs in **Red's house in
   Pallet Town**, instead of starting in New Bark Town.
 - The bedroom PC is usable as the player's home PC.
+- A radio sits immediately to the right of the bedroom PC. In regular builds,
+  it plays normal radio content; debug builds use it for the test setup below.
 - Downstairs, Mom directs the player to Professor Oak. After receiving a
   starter, talking to her heals the party.
 - The downstairs television has the Red/Blue-style movie reference: four boys
@@ -62,7 +64,9 @@ uses Blue's artwork and appears as **RIVAL ???**.
 
 The opening includes corrections to Oak's outdoor appearance, early lab
 visibility, escort movement, rival visibility when nearby, and the rival facing
-the player when issuing his challenge.
+the player when issuing his challenge. Connected Pallet, Viridian, Pewter, and
+Cinnabar maps retain the correct NPC graphics when walking between maps or
+returning from battles. Surfing also preserves NPC graphics when the map reloads.
 
 ## Pokémon pictures and icons
 
@@ -234,6 +238,40 @@ Later changes have passed ROM builds and source or data checks, but still
 need in-game verification. Start a new game to test the complete Pallet opening;
 older saves are not migrated into that opening sequence.
 
+## Debug-build bedroom radio
+
+In the debug ROM, interacting with the Pallet bedroom radio applies a
+single-use testing package. The original New Bark bedroom radio provides the
+same package. This feature is excluded from the regular ROM.
+
+The package grants:
+
+- A Pokédex and the full Pokégear, including phone, map, radio, and EXPN cards.
+- 99 Max Repels and 99 Master Balls.
+- All 16 badges, Gym Leader defeat flags, the Elite Four completion flag, and
+  the credits-skip flag.
+- All normal Fly destinations.
+- A level-100 Mewtwo holding BrightPowder.
+- A level-100 Mew holding Leftovers, with Fly, Surf, Strength, and Cut.
+- A second level-100 Mew holding Leftovers, with Flash, Rock Smash, Headbutt,
+  and Waterfall.
+
+Existing party Pokémon are preserved. Three empty party slots and room in the
+Bag are required. The party is healed and the new moves receive full PP.
+Using the radio again after completion does not add duplicate rewards.
+
+Debug builds reset the inherited battle-skip switch to off at startup, so
+ordinary attacks deal normal damage even when the radio setup is skipped.
+
+The setup also marks the Pallet opening complete, removes the lab's remaining
+starter balls, and skips the guide's New Bark Mom and Vermilion introduction
+scenes. These are testing shortcuts rather than a complete simulation of
+every completed story event. Oak's speech, Elm's dialogue, and wall collision
+are not changed by this debug package.
+
+Build with `make crystal_debug` and open `pokecrystal_debug.gbc` to use it.
+See [debug radio notes](debug-radio.md) for setup and playtesting details.
+
 ## Maintaining this document
 
 Update this document whenever a change affects what players see, receive, can
@@ -242,3 +280,4 @@ include relevant exceptions. Keep implementation details in the feature notes:
 
 - [Pallet opening implementation notes](pallet-opening.md)
 - [Party icon implementation notes and artwork source](party-icons.md)
+- [Debug bedroom radio setup and testing](debug-radio.md)

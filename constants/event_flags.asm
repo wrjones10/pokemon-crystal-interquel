@@ -1472,7 +1472,9 @@
 	const EVENT_OAKS_LAB_RIVAL
 	const EVENT_BATTLED_RIVAL_IN_OAKS_LAB
 	const EVENT_OAKS_LAB_OAK
-; Unused: next 36 events
+; Debug radio package (allocated from unused event flags).
+	const EVENT_DEBUG_RADIO_USED
+; Unused: next 35 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

@@ -1327,6 +1327,15 @@ CopyrightString:
 INCLUDE "data/copyright.asm"
 
 GameInit::
+if DEF(_DEBUG)
+	; The original debug room's battle-skip switch is not part of saved game data.
+	; Uninitialized or stale SRAM must not turn ordinary attacks into instant KOs.
+	ld a, BANK(sSkipBattle)
+	call OpenSRAM
+	xor a
+	ld [sSkipBattle], a
+	call CloseSRAM
+endc
 	farcall TryLoadSaveData
 	call ClearWindowData
 	call ClearBGPalettes

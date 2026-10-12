@@ -50,6 +50,9 @@ PlayersHousePosterScript:
 	describedecoration DECODESC_POSTER
 
 PlayersHouseRadioScript:
+if DEF(_DEBUG)
+	farsjump DebugPlayerRadioScript
+else
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .NormalRadio
 	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
@@ -78,6 +81,7 @@ PlayersHouseRadioScript:
 	pause 45
 	closetext
 	end
+endc
 
 PlayersHouseBookshelfScript:
 	jumpstd PictureBookshelfScript

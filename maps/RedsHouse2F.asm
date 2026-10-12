@@ -14,6 +14,13 @@ RedsHouse2FInitializeCallback:
 RedsHouse2FN64Script:
 	jumptext RedsHouse2FN64Text
 
+RedsHouse2FRadioScript:
+if DEF(_DEBUG)
+	farsjump DebugPlayerRadioScript
+else
+	jumpstd Radio1Script
+endc
+
 RedsHouse2FPCScript:
 	opentext
 	special PlayersHousePC
@@ -43,5 +50,6 @@ RedsHouse2F_MapEvents:
 	def_bg_events
 	bg_event  3,  5, BGEVENT_READ, RedsHouse2FN64Script
 	bg_event  0,  1, BGEVENT_READ, RedsHouse2FPCScript
+	bg_event  1,  1, BGEVENT_READ, RedsHouse2FRadioScript
 
 	def_object_events
