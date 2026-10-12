@@ -1,12 +1,8 @@
 INCLUDE "engine/gfx/sgb_layouts.asm"
 
-DEF SHINY_ATK_MASK EQU %0010
-DEF SHINY_DEF_DV EQU 10
-DEF SHINY_SPD_DV EQU 10
-DEF SHINY_SPC_DV EQU 10
-
 CheckShininess:
 ; Check if a mon is shiny by DVs at bc.
+; All four independent DVs must be at least SHINY_MIN_DV.
 ; Return carry if shiny.
 
 	ld l, c
@@ -14,26 +10,27 @@ CheckShininess:
 
 ; Attack
 	ld a, [hl]
-	and SHINY_ATK_MASK << 4
-	jr z, .not_shiny
+	and %1111 << 4
+	cp SHINY_MIN_DV << 4
+	jr c, .not_shiny
 
 ; Defense
 	ld a, [hli]
 	and %1111
-	cp SHINY_DEF_DV
-	jr nz, .not_shiny
+	cp SHINY_MIN_DV
+	jr c, .not_shiny
 
 ; Speed
 	ld a, [hl]
 	and %1111 << 4
-	cp SHINY_SPD_DV << 4
-	jr nz, .not_shiny
+	cp SHINY_MIN_DV << 4
+	jr c, .not_shiny
 
 ; Special
 	ld a, [hl]
 	and %1111
-	cp SHINY_SPC_DV
-	jr nz, .not_shiny
+	cp SHINY_MIN_DV
+	jr c, .not_shiny
 
 ; shiny
 	scf
