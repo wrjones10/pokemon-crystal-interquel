@@ -25,6 +25,10 @@ DoPlayerMovement::
 	ret nz
 
 	ld a, c
+	and PAD_A | PAD_B
+	ret nz
+
+	ld a, c
 	or PAD_DOWN
 	ld [wCurInput], a
 	ret
