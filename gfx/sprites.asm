@@ -106,3 +106,8 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+
+SECTION "Surfing Player Sprites", ROMX
+
+ChrisSurfSpriteGFX::           INCBIN "gfx/sprites/chris_surf.2bpp"
+KrisSurfSpriteGFX::            INCBIN "gfx/sprites/kris_surf.2bpp"

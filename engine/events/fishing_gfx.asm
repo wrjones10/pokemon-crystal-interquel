@@ -4,11 +4,23 @@ LoadFishingGFX:
 	ld a, $1
 	ldh [rVBK], a
 
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .surfing
+
 	ld de, FishingGFX
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .got_gender
 	ld de, KrisFishingGFX
+	jr .got_gender
+
+.surfing
+	ld de, SurfFishingGFX
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .got_gender
+	ld de, KrisSurfFishingGFX
 .got_gender
 
 	ld hl, vTiles3 tile $02
@@ -40,3 +52,12 @@ INCBIN "gfx/overworld/chris_fish.2bpp"
 
 KrisFishingGFX:
 INCBIN "gfx/overworld/kris_fish.2bpp"
+
+SurfFishingGFX:
+INCBIN "gfx/overworld/chris_surf_fish.2bpp"
+; The fourth transfer supplies the absolute rod tiles at $fc/$fd.
+INCBIN "gfx/overworld/chris_fish.2bpp", 6 tiles, 2 tiles
+
+KrisSurfFishingGFX:
+INCBIN "gfx/overworld/kris_surf_fish.2bpp"
+INCBIN "gfx/overworld/kris_fish.2bpp", 6 tiles, 2 tiles

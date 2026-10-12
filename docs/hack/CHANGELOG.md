@@ -159,6 +159,22 @@ Rock Smash, and the Bug-Catching Contest. Only normal encounter types receive
 the added variance; Sweet Scent uses the normal encounter selection outside
 the contest.
 
+## Fishing while surfing
+
+The Old Rod, Good Rod, and Super Rod can be used while surfing, as well as
+from land. The player must face an unoccupied water tile in a fishing area.
+Casting onto an NPC is blocked.
+
+Both player characters now have surfing sprites showing the trainer riding
+the Pokémon, with matching fishing poses. The normal surfing appearance is
+restored after fishing or a fishing battle. Surfing Pikachu retains its
+existing fishing restriction. Fishing species, levels, and bite chances use
+their existing rod and area tables.
+
+This feature uses the sprites and approach supplied by the pret
+[fishing while surfing guide](https://github.com/pret/pokecrystal/wiki/Allow-fishing-while-surfing),
+which credits The Void's contribution to Polished Crystal.
+
 ## Evolution changes
 
 No Pokémon requires trading to evolve.
