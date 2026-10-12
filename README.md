@@ -2,6 +2,9 @@
 
 This is a disassembly of Pokémon Crystal.
 
+For this hack's player-facing changes, see the
+[Pokémon Crystal Interquel gameplay changelog](docs/hack/CHANGELOG.md).
+
 It builds the following ROMs:
 
 - Pokemon - Crystal Version (UE) (V1.0) [C][!].gbc `sha1: f4cd194bdee0d04ca4eac29e09b8e4e9d818c133`
