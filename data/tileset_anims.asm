@@ -9,6 +9,7 @@ ENDM
 
 Tileset0Anim:
 TilesetJohtoModernAnim:
+TilesetRoute2Anim:
 TilesetKantoAnim:
 	tileframe AnimateWaterTile,        vTiles2 tile $14
 	tileframe WaitTileAnimation
@@ -30,6 +31,20 @@ TilesetParkAnim:
 	tileframe AnimateWaterPalette
 	tileframe WaitTileAnimation
 	tileframe AnimateFlowerTile
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe StandingTileFrame8
+	tileframe DoneTileAnimation
+
+TilesetViridianForestAnim:
+	tileframe ForestTreeLeftAnimation
+	tileframe ForestTreeRightAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe WaitTileAnimation
+	tileframe ForestTreeLeftAnimation2
+	tileframe ForestTreeRightAnimation2
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8

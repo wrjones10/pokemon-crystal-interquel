@@ -24,9 +24,6 @@ CeladonCity_Blocks:
 SaffronCity_Blocks:
 	INCBIN "maps/SaffronCity.blk"
 
-Route2_Blocks:
-	INCBIN "maps/Route2.blk"
-
 ElmsHouse_Blocks:
 	INCBIN "maps/ElmsHouse.blk"
 
@@ -1047,3 +1044,17 @@ GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
 
 ENDSECTION
+
+SECTION "Viridian Forest Map Blocks", ROMX
+
+Route2_Blocks:
+	INCBIN "maps/Route2.blk"
+
+ViridianForest_Blocks:
+	INCBIN "maps/ViridianForest.blk"
+
+ViridianForestNorthGate_Blocks:
+	INCBIN "maps/ViridianForestNorthGate.blk"
+
+ViridianForestSouthGate_Blocks:
+	INCBIN "maps/ViridianForestSouthGate.blk"

@@ -8,6 +8,7 @@ MACRO tilepal
 	endr
 ENDM
 
+TilesetRoute2PalMap:
 TilesetKantoPalMap:
 INCLUDE "gfx/tilesets/kanto_palette_map.asm"
 
@@ -113,3 +114,6 @@ MapGroupPalettes: ; unreferenced
 rept NUM_MAP_GROUPS
 	db PAL_BG_ROOF
 endr
+
+TilesetViridianForestPalMap:
+INCLUDE "gfx/tilesets/viridian_forest_palette_map.asm"

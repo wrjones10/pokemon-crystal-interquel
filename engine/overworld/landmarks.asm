@@ -70,6 +70,10 @@ RegionCheck:
 	cp KANTO_LANDMARK
 	jr c, .johto
 
+	; Viridian Forest was appended after existing landmark IDs for save compatibility.
+	cp LANDMARK_VIRIDIAN_FOREST
+	jr z, .kanto
+
 ; Victory Road area is considered to be Johto.
 	cp LANDMARK_VICTORY_ROAD
 	jr c, .kanto

@@ -1177,11 +1177,21 @@ CanEncounterWildMon::
 	ld hl, wStatusFlags
 	bit STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
 	jr nz, .no
+	; Like Ilex, Viridian Forest uses the cave environment for map sprites and
+	; field moves, but Yellow's forest only has encounters in tall grass.
+	ld a, [wMapGroup]
+	cp GROUP_VIRIDIAN_FOREST
+	jr nz, .environment
+	ld a, [wMapNumber]
+	cp MAP_VIRIDIAN_FOREST
+	jr z, .grass_check
+.environment
 	ld a, [wEnvironment]
 	cp CAVE
 	jr z, .ice_check
 	cp DUNGEON
 	jr z, .ice_check
+.grass_check
 	farcall CheckGrassCollision
 	jr nc, .no
 

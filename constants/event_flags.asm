@@ -1474,7 +1474,22 @@
 	const EVENT_OAKS_LAB_OAK
 ; Debug radio package (allocated from unused event flags).
 	const EVENT_DEBUG_RADIO_USED
-; Unused: next 35 events
+; Route 2 / Viridian Forest restoration (reserved event IDs).
+	const EVENT_ROUTE_2_MOON_STONE
+	const EVENT_ROUTE_2_HP_UP
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_3
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_4
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_5
+	const EVENT_VIRIDIAN_FOREST_POTION_1
+	const EVENT_VIRIDIAN_FOREST_POTION_2
+	const EVENT_VIRIDIAN_FOREST_POKE_BALL
+	const EVENT_VIRIDIAN_FOREST_HIDDEN_POTION
+	const EVENT_VIRIDIAN_FOREST_HIDDEN_ANTIDOTE
+; Pewter City east-exit guide (reserved visibility flag).
+	const EVENT_PEWTER_CITY_GYM_BLOCKER
+; Unused: next 22 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

@@ -4,8 +4,10 @@ CutTreeBlockPointers:
 	dbw TILESET_JOHTO,        .johto
 	dbw TILESET_JOHTO_MODERN, .johto_modern
 	dbw TILESET_KANTO,        .kanto
+	dbw TILESET_ROUTE_2,      .kanto
 	dbw TILESET_PARK,         .park
 	dbw TILESET_FOREST,       .forest
+	dbw TILESET_VIRIDIAN_FOREST, .viridian_forest
 	db -1 ; end
 
 .johto:
@@ -36,6 +38,13 @@ CutTreeBlockPointers:
 ; facing block, replacement block, animation
 	db $13, $03, 1 ; grass
 	db $03, $04, 1 ; grass
+	db -1 ; end
+
+.viridian_forest:
+	db $01, $5a, 1 ; grass
+	db $06, $5b, 1 ; grass
+	db $07, $5c, 1 ; grass
+	db $16, $5d, 1 ; grass
 	db -1 ; end
 
 .forest:

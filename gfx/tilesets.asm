@@ -6,6 +6,7 @@ ENDM
 
 SECTION "Tileset Data 1", ROMX
 
+TilesetRoute2GFX::
 TilesetKantoGFX::
 INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
@@ -335,3 +336,19 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+SECTION "Viridian Forest Tileset", ROMX
+
+TilesetViridianForestGFX::
+INCBIN "gfx/tilesets/viridian_forest.2bpp.lz"
+TilesetViridianForestMeta::
+INCBIN "data/tilesets/viridian_forest_metatiles.bin"
+TilesetViridianForestColl::
+INCLUDE "data/tilesets/viridian_forest_collision.asm"
+
+SECTION "Route 2 Blockset", ROMX
+
+TilesetRoute2Meta::
+INCBIN "data/tilesets/route_2_metatiles.bin"
+TilesetRoute2Coll::
+INCLUDE "data/tilesets/route_2_collision.asm"

@@ -842,4 +842,33 @@ KantoGrassWildMons:
 	db 42, GOLBAT
 	end_grass_wildmons
 
+	; Yellow-inspired approximation; probabilities are Crystal's seven slots.
+	def_grass_wildmons VIRIDIAN_FOREST
+	db 10 percent, 10 percent, 10 percent
+	; morn
+	db 3, CATERPIE
+	db 4, METAPOD
+	db 5, CATERPIE
+	db 4, PIDGEY
+	db 6, CATERPIE
+	db 8, PIDGEY
+	db 9, PIDGEOTTO
+	; day
+	db 3, CATERPIE
+	db 4, METAPOD
+	db 5, CATERPIE
+	db 4, PIDGEY
+	db 6, CATERPIE
+	db 8, PIDGEY
+	db 9, PIDGEOTTO
+	; nite
+	db 3, CATERPIE
+	db 4, METAPOD
+	db 5, CATERPIE
+	db 4, PIDGEY
+	db 6, CATERPIE
+	db 8, PIDGEY
+	db 9, PIDGEOTTO
+	end_grass_wildmons
+
 	db -1 ; end

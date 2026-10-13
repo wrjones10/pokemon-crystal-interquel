@@ -791,6 +791,12 @@ LassGroup:
 	db 36, GOLDUCK,    DISABLE, SURF, PSYCHIC_M, SCREECH
 	db -1 ; end
 
+	; Yellow's unnamed Viridian Forest Lass.
+	db "???@", TRAINERTYPE_NORMAL
+	db 6, NIDORAN_F
+	db 6, NIDORAN_M
+	db -1 ; end
+
 JanineGroup:
 	; JANINE (1)
 	db "JANINE@", TRAINERTYPE_MOVES
@@ -1611,6 +1617,30 @@ BugCatcherGroup:
 	db "WAYNE@", TRAINERTYPE_NORMAL
 	db  8, LEDYBA
 	db 10, PARAS
+	db -1 ; end
+
+	; Yellow Viridian Forest Bug Catcher 1.
+	db "???@", TRAINERTYPE_NORMAL
+	db 7, CATERPIE
+	db 7, CATERPIE
+	db -1 ; end
+
+	; Yellow Viridian Forest Bug Catcher 2.
+	db "???@", TRAINERTYPE_NORMAL
+	db 6, METAPOD
+	db 6, CATERPIE
+	db 6, METAPOD
+	db -1 ; end
+
+	; Yellow Viridian Forest Bug Catcher 3.
+	db "???@", TRAINERTYPE_NORMAL
+	db 10, CATERPIE
+	db -1 ; end
+
+	; Yellow Viridian Forest Bug Catcher 4.
+	db "???@", TRAINERTYPE_NORMAL
+	db 8, CATERPIE
+	db 8, METAPOD
 	db -1 ; end
 
 FisherGroup:

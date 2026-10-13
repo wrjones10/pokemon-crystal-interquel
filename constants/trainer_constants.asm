@@ -192,6 +192,8 @@ DEF KRIS EQU __trainer_class__
 	const DANA4
 	const DANA5
 
+	const VIRIDIAN_FOREST_LASS
+
 	trainerclass JANINE ; 1a
 	const JANINE1
 
@@ -348,6 +350,11 @@ DEF KRIS EQU __trainer_class__
 	const ARNIE4
 	const ARNIE5
 	const WAYNE
+
+	const VIRIDIAN_FOREST_BUG_CATCHER_1
+	const VIRIDIAN_FOREST_BUG_CATCHER_2
+	const VIRIDIAN_FOREST_BUG_CATCHER_3
+	const VIRIDIAN_FOREST_BUG_CATCHER_4
 
 	trainerclass FISHER ; 25
 	const JUSTIN

@@ -4,7 +4,7 @@ This is the master record of player-facing changes from the original Pokémon
 Crystal ROM. It describes the current game, including changes that supersede
 earlier behavior, rather than listing every development revision.
 
-Last updated: October 12, 2026.
+Last updated: October 13, 2026.
 
 ## Opening and starting location
 
@@ -67,6 +67,31 @@ visibility, escort movement, rival visibility when nearby, and the rival facing
 the player when issuing his challenge. Connected Pallet, Viridian, Pewter, and
 Cinnabar maps retain the correct NPC graphics when walking between maps or
 returning from battles. Surfing also preserves NPC graphics when the map reloads.
+
+## Route 2 and Viridian Forest
+
+- Route 2 uses Yellow's longer layout with Crystal artwork. Its main path now
+  goes through two gatehouses and Viridian Forest between Viridian and Pewter.
+- Rob, Ed and Doug retain their Crystal parties, levels and dialogue. They move
+  to optional eastern areas and cannot force a battle on the main pre-Cut path.
+- The PSNCureBerry tree moves to northern Route 2. Carbos remains near the
+  northeast end and Elixer remains in the southeast. Dire Hit and Max Potion
+  move to fit the new eastern bypass. Yellow's Moon Stone and HP Up are added.
+- Crystal's four Route 2 hidden pickups are removed. The Nugget house, aide
+  dialogue and Route 2 wild encounter table remain as before.
+- Viridian Forest follows Yellow's maze, using Crystal forest art. It includes
+  Yellow's four Bug Catchers, one Lass, two other NPCs, signs, two visible
+  Potions, one visible Poké Ball, a hidden Potion and a hidden Antidote.
+- The forest uses its original Yellow music, ported to Crystal's sound engine.
+  This track plays only inside the forest. All six signs display sign artwork;
+  decorative bushes use tree artwork.
+- Forest encounters approximate Yellow using Crystal's seven slots: Caterpie,
+  Metapod, Pidgey and Pidgeotto, with base levels 3–9. The same table is used
+  morning, day and night; the existing 0–4 level bonus still applies. Encounters
+  occur in grass, and there are no wild Pikachu in this forest.
+
+See [Route 2 and forest notes](route-2-viridian-forest.md) for placements,
+encounter probabilities and playtesting details.
 
 ## Pokémon pictures and icons
 
@@ -281,3 +306,4 @@ include relevant exceptions. Keep implementation details in the feature notes:
 - [Pallet opening implementation notes](pallet-opening.md)
 - [Party icon implementation notes and artwork source](party-icons.md)
 - [Debug bedroom radio setup and testing](debug-radio.md)
+- [Route 2 and Viridian Forest](route-2-viridian-forest.md)

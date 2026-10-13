@@ -105,6 +105,9 @@ DEF KANTO_LANDMARK_LAST EQU const_value - 1
 DEF OTHER_LANDMARK EQU const_value
 	const LANDMARK_FAST_SHIP         ; 5f
 
+	const LANDMARK_VIRIDIAN_FOREST   ; 60 (appended to preserve existing IDs)
+REDEF KANTO_LANDMARK_LAST EQU LANDMARK_VIRIDIAN_FOREST
+
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

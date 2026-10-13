@@ -487,3 +487,9 @@ INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 
 ENDSECTION
+
+SECTION "Viridian Forest Map Scripts", ROMX
+
+INCLUDE "maps/ViridianForest.asm"
+INCLUDE "maps/ViridianForestNorthGate.asm"
+INCLUDE "maps/ViridianForestSouthGate.asm"

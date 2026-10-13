@@ -630,6 +630,9 @@ PokegearMap_ContinueMap:
 	ld [hl], a
 .wrap_around_up
 	inc [hl]
+	ld a, [hl]
+	cp LANDMARK_FAST_SHIP
+	jr z, .up
 	jr .done_dpad
 
 .down
@@ -642,6 +645,9 @@ PokegearMap_ContinueMap:
 	ld [hl], a
 .wrap_around_down
 	dec [hl]
+	ld a, [hl]
+	cp LANDMARK_FAST_SHIP
+	jr z, .down
 .done_dpad
 	ld a, [wPokegearMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
@@ -1861,6 +1867,9 @@ _TownMap:
 
 .okay
 	inc [hl]
+	ld a, [hl]
+	cp LANDMARK_FAST_SHIP
+	jr z, .pressed_up
 	jr .next
 
 .pressed_down
@@ -1874,6 +1883,9 @@ _TownMap:
 
 .okay2
 	dec [hl]
+	ld a, [hl]
+	cp LANDMARK_FAST_SHIP
+	jr z, .pressed_down
 
 .next
 	push de

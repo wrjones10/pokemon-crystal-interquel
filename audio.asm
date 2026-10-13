@@ -165,3 +165,8 @@ SECTION "Cries", ROMX
 INCLUDE "data/pokemon/cries.asm"
 
 INCLUDE "audio/cries.asm"
+
+
+SECTION "Yellow Viridian Forest Music", ROMX
+
+INCLUDE "audio/music/viridianforest.asm"
