@@ -93,6 +93,17 @@ returning from battles. Surfing also preserves NPC graphics when the map reloads
 See [Route 2 and forest notes](route-2-viridian-forest.md) for placements,
 encounter probabilities and playtesting details.
 
+## Pewter City progression
+
+Before Brock is defeated, Yellow's eastern-exit youngster stops the player from
+leaving toward Route 3 and escorts them back to the Gym. Speaking to him also
+starts the escort. He returns to his post afterward, so repeated attempts are
+blocked. Defeating Brock removes him and opens the exit. The debug radio's
+Brock victory flag also bypasses the event.
+
+See [Pewter Gym blocker notes](pewter-gym-blocker.md) for implementation and
+playtesting details.
+
 ## Pokémon pictures and icons
 
 ### Colored overworld pictures
@@ -307,3 +318,4 @@ include relevant exceptions. Keep implementation details in the feature notes:
 - [Party icon implementation notes and artwork source](party-icons.md)
 - [Debug bedroom radio setup and testing](debug-radio.md)
 - [Route 2 and Viridian Forest](route-2-viridian-forest.md)
+- [Pewter City Gym guide and exit blocker](pewter-gym-blocker.md)
