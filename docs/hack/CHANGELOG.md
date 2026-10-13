@@ -106,6 +106,9 @@ starts the escort. He returns to his post afterward, so repeated attempts are
 blocked. Defeating Brock removes him and opens the exit. The debug radio's
 Brock victory flag also bypasses the event.
 
+Brock has no Hyper Potion in his initial battle. His rematch definition retains
+the trainer class's Hyper Potion.
+
 See [Pewter Gym blocker notes](pewter-gym-blocker.md) for implementation and
 playtesting details.
 

@@ -61,6 +61,16 @@ GetTrainerAttributes:
 	ld [de], a
 	ld a, [hl]
 	ld [wEnemyTrainerBaseReward], a
+
+; Brock's initial party has no Hyper Potion. Rematches keep the class items.
+	ld a, [wTrainerClass]
+	cp BROCK
+	ret nz
+	ld a, [wOtherTrainerID]
+	cp BROCK1
+	ret nz
+	ld a, NO_ITEM
+	ld [wEnemyTrainerItem1], a
 	ret
 
 INCLUDE "data/trainers/attributes.asm"
