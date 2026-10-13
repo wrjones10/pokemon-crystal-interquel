@@ -142,6 +142,11 @@ def main():
     def quadrant(block, x, y):
         base = block * 16 + (y % 2) * 8 + (x % 2) * 2
         return bytes(blocks[base + offset] for offset in (0, 1, 4, 5))
+
+    map_entry = next(line for line in (ROOT / "data/maps/maps.asm").read_text().splitlines()
+                     if line.strip().startswith("map ViridianForest,"))
+    assert "PALETTE_NITE" in map_entry, "forest should stay dim during the day"
+
     drawn_signs = {(x, y) for y in range(forest.height) for x in range(forest.width)
                    if quadrant(forest.blocks[y // 2 * (forest.width // 2) + x // 2], x, y) == sign}
     readable_signs = {position for position, tail in forest.background if "BGEVENT_READ" in tail}
@@ -160,7 +165,8 @@ def main():
     assert sum("OBJECTTYPE_ITEMBALL" in tail for _, tail in forest.objects) == 3
     assert sum("BGEVENT_ITEM" in tail for _, tail in forest.background) == 2
     print("PASS: dimensions, collision, reciprocal forest warps, travel in both directions,")
-    print("      reachable interactions, optional Crystal trainers, and forest content counts.")
+    print("      reachable interactions, optional Crystal trainers, forest content counts,")
+    print("      fixed forest palette.")
 
 
 if __name__ == "__main__":

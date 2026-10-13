@@ -43,6 +43,12 @@ floor marks use Crystal equivalents. Sign blocks match the six readable sign
 positions, including their grass-cleared variants; the original conversion had
 confused the source sign and bush graphics.
 
+The forest uses Crystal's fixed night palette, like Ilex Forest, to keep its
+canopy dim even during the day. This does not change the clock or encounter time
+period. The northern exit retains its original ported layout and tree border.
+The attempted border-opening tile callback was removed after a north-exit crash
+was reproduced during a new-game playtest.
+
 Yellow's five trainers retain their positions, sight ranges, species and levels:
 
 - (30, 33): two level 7 Caterpie.

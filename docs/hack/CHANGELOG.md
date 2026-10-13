@@ -85,6 +85,9 @@ returning from battles. Surfing also preserves NPC graphics when the map reloads
 - The forest uses its original Yellow music, ported to Crystal's sound engine.
   This track plays only inside the forest. All six signs display sign artwork;
   decorative bushes use tree artwork.
+- The forest stays dim throughout the day, like Ilex Forest. The northern exit
+  retains its previous layout; the border-opening callback was reverted after
+  playtesting found a crash when exiting north.
 - Forest encounters approximate Yellow using Crystal's seven slots: Caterpie,
   Metapod, Pidgey and Pidgeotto, with base levels 3–9. The same table is used
   morning, day and night; the existing 0–4 level bonus still applies. Encounters
