@@ -17,6 +17,10 @@ Crystal's trainers keep their parties, levels, dialogue, and defeat flags:
 
 They occupy optional eastern areas. Their sight lines cannot reach the mandatory
 pre-Cut path to either forest entrance.
+Rob faces left with a one-tile sight range, stopping before the wall. Ed faces
+down with a three-tile sight range along the open path. Crystal's trainer sight
+does not check intervening walls, so these settings prevent challenges through
+barriers without changing trainer detection on other maps.
 
 | Reward | Position | Source |
 |---|---|---|

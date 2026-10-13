@@ -30,27 +30,35 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
+	const FALKNER_REMATCH
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
+	const WHITNEY_REMATCH
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
+	const BUGSY_REMATCH
 
 	trainerclass MORTY ; 4
 	const MORTY1
+	const MORTY_REMATCH
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
+	const PRYCE_REMATCH
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
+	const JASMINE_REMATCH
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
+	const CHUCK_REMATCH
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const CLAIR_REMATCH
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -73,6 +81,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass WILL ; b
 	const WILL1
+	const WILL_REMATCH
 
 	trainerclass CAL ; c
 	const CAL1 ; unused
@@ -81,24 +90,31 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BRUNO ; d
 	const BRUNO1
+	const BRUNO_REMATCH
 
 	trainerclass KAREN ; e
 	const KAREN1
+	const KAREN_REMATCH
 
 	trainerclass KOGA ; f
 	const KOGA1
+	const KOGA_REMATCH
 
 	trainerclass CHAMPION ; 10
 	const LANCE
+	const LANCE_REMATCH
 
 	trainerclass BROCK ; 11
 	const BROCK1
+	const BROCK_REMATCH
 
 	trainerclass MISTY ; 12
 	const MISTY1
+	const MISTY_REMATCH
 
 	trainerclass LT_SURGE ; 13
 	const LT_SURGE1
+	const LT_SURGE_REMATCH
 
 	trainerclass SCIENTIST ; 14
 	const ROSS
@@ -109,6 +125,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
+	const ERIKA_REMATCH
 
 	trainerclass YOUNGSTER ; 16
 	const JOEY1
@@ -196,6 +213,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass JANINE ; 1a
 	const JANINE1
+	const JANINE_REMATCH
 
 	trainerclass COOLTRAINERM ; 1b
 	const NICK
@@ -329,6 +347,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
+	const SABRINA_REMATCH
 
 	trainerclass BUG_CATCHER ; 24
 	const DON
@@ -507,6 +526,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
+	const BLAINE_REMATCH
 
 	trainerclass BURGLAR ; 2f
 	const DUNCAN
@@ -695,6 +715,7 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass BLUE ; 40
 	const BLUE1
+	const BLUE_REMATCH
 
 	trainerclass OFFICER ; 41
 	const KEITH

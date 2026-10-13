@@ -122,7 +122,7 @@ def main():
 
     # None of the retained level-30+ trainers may see the mandatory main path.
     main_path = route.reachable((8, 71)) | route.reachable((8, 0))
-    vectors = {"LEFT": (-1, 0), "RIGHT": (1, 0), "DOWN": (0, 1)}
+    vectors = {"LEFT": (-1, 0), "RIGHT": (1, 0), "DOWN": (0, 1), "UP": (0, -1)}
     for (x, y), tail in route.objects:
         if "OBJECTTYPE_TRAINER" not in tail:
             continue
@@ -130,10 +130,15 @@ def main():
         sight = int(tail.split(",")[8])
         facings = (vectors[facing[1]],) if facing else DIRECTIONS
         for dx, dy in facings:
+            blocked = False
             for distance in range(1, sight + 1):
                 position = (x + dx * distance, y + dy * distance)
+                # Crystal's trainer sight does not stop at terrain barriers.
+                # Check the entire ray, even beyond a wall.
                 if not route.floor(position):
-                    break
+                    blocked = True
+                    continue
+                assert not blocked, ("trainer sees through a barrier", tail, position)
                 assert position not in main_path, ("mandatory high-level battle", tail)
 
     # Sign graphics must match the script positions, including after cutting grass.

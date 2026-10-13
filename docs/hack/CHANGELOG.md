@@ -74,6 +74,8 @@ returning from battles. Surfing also preserves NPC graphics when the map reloads
   goes through two gatehouses and Viridian Forest between Viridian and Pewter.
 - Rob, Ed and Doug retain their Crystal parties, levels and dialogue. They move
   to optional eastern areas and cannot force a battle on the main pre-Cut path.
+  Rob's shortened sight range and Ed's fixed downward facing prevent challenges
+  through barriers in the new layout.
 - The PSNCureBerry tree moves to northern Route 2. Carbos remains near the
   northeast end and Elixer remains in the southeast. Dire Hit and Max Potion
   move to fit the new eastern bypass. Yellow's Moon Stone and HP Up are added.
@@ -106,6 +108,19 @@ Brock victory flag also bypasses the event.
 
 See [Pewter Gym blocker notes](pewter-gym-blocker.md) for implementation and
 playtesting details.
+
+## Boss rematch preparation
+
+All 16 Gym Leaders, the four Elite Four members, and Champion Lance have separate
+rematch party definitions. These currently duplicate their original parties,
+including names, levels, moves and held items, and can be edited independently.
+There are no unlock conditions or scripts that select these rematches yet;
+existing boss battles continue to use their original definitions.
+
+The rematch parties are in `data/trainers/parties.asm`, under labels such as
+`BrockRematch` and `LanceRematch`. Their IDs in
+`constants/trainer_constants.asm` use names such as `BROCK_REMATCH` and
+`LANCE_REMATCH` (ID 2 within each existing trainer class).
 
 ## Pokémon pictures and icons
 
