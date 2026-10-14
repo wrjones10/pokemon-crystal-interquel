@@ -4,7 +4,7 @@ This is the master record of player-facing changes from the original Pokémon
 Crystal ROM. It describes the current game, including changes that supersede
 earlier behavior, rather than listing every development revision.
 
-Last updated: October 13, 2026.
+Last updated: October 14, 2026.
 
 ## Opening and starting location
 
@@ -294,6 +294,14 @@ The opening's general functionality has been verified through playtesting.
 Later changes have passed ROM builds and source or data checks, but still
 need in-game verification. Start a new game to test the complete Pallet opening;
 older saves are not migrated into that opening sequence.
+
+## Debug-build mart stock
+
+Every mart in the debug ROM sells Rare Candy for ₽100, including department-store
+counters, the pharmacy, herb shop, bargain shop and rooftop sales. Existing stock
+is preserved. Specialty shops retain their usual purchase restrictions (including
+the bargain shop's once-per-day stock). Rare Candy sells back for ₽50 in debug
+builds. Regular builds retain their normal stock and Rare Candy price.
 
 ## Debug-build bedroom radio
 

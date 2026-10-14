@@ -1973,6 +1973,10 @@ wMartItem7BCD:: ds 3
 wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
+if DEF(_DEBUG)
+; One extra price slot for Rare Candy in otherwise full marts.
+wMartItem11BCD:: ds 3
+endc
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX

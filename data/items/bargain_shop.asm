@@ -1,5 +1,8 @@
 BargainShopData:
-	db 5
+	db 5 + DEF(_DEBUG)
+if DEF(_DEBUG)
+	dbw RARE_CANDY, 100
+endc
 	dbw NUGGET,     4500
 	dbw PEARL,       650
 	dbw BIG_PEARL,  3500
