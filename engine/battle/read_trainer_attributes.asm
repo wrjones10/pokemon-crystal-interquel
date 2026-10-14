@@ -73,4 +73,35 @@ GetTrainerAttributes:
 	ld [wEnemyTrainerItem1], a
 	ret
 
+GetTrainerAIMoveWeights:
+; Return hl pointing to a move-AI bitfield in this bank.
+; Preserve the original Battle Tower override: always use Falkner's class AI.
+	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
+	ld a, [wInBattleTowerBattle]
+	bit IN_BATTLE_TOWER_BATTLE_F, a
+	ret nz
+	ld a, [wTrainerClass]
+	cp PALLET_RIVAL
+	jr nz, .ClassDefaults
+	ld a, [wOtherTrainerID]
+	ld b, a
+	ld hl, PalletRivalAIMoveWeights
+.Lookup:
+	ld a, [hli]
+	and a
+	jr z, .ClassDefaults
+	cp b
+	ret z
+	inc hl
+	inc hl
+	jr .Lookup
+.ClassDefaults:
+	ld hl, TrainerClassAttributes + TRNATTR_AI_MOVE_WEIGHTS
+	ld a, [wTrainerClass]
+	dec a
+	ld bc, NUM_TRAINER_ATTRIBUTES
+	call AddNTimes
+	ret
+
 INCLUDE "data/trainers/attributes.asm"
+INCLUDE "data/trainers/rival_ai.asm"

@@ -71,3 +71,11 @@ In an emulator, test each starter, both trigger rows, winning, losing, returning
 afterward, and visiting after earning the Boulder Badge without doing the battle.
 Check entry from Viridian City and from Victory Road Gate. Reboot the updated ROM
 and use an in-game save or new game when testing changed map scripts.
+
+## Move AI profiles
+
+`data/trainers/rival_ai.asm` assigns move-AI flags by `PALLET_RIVAL` party ID.
+The lab variants use `AI_BASIC`; Route 22 variants use `AI_BASIC | AI_SETUP`.
+Add explicit entries for later rival parties as they are introduced. Unlisted
+parties fall back to their class's default move AI. Item use, switching, other
+trainer classes and Battle Tower's Falkner-AI override retain their behavior.

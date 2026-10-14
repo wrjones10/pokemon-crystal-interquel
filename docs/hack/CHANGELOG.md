@@ -68,6 +68,16 @@ the player when issuing his challenge. Connected Pallet, Viridian, Pewter, and
 Cinnabar maps retain the correct NPC graphics when walking between maps or
 returning from battles. Surfing also preserves NPC graphics when the map reloads.
 
+## Rival move AI
+
+The new rival uses simpler move selection in the lab (`AI_BASIC`). On Route 22,
+he also uses setup scoring (`AI_BASIC | AI_SETUP`). All three starter variants
+share the settings for their encounter. These profiles can be set separately for
+later battles; item use and switching still follow the rival's class settings.
+
+Profiles are edited in `data/trainers/rival_ai.asm`. Other trainer classes and
+Battle Tower AI are unchanged.
+
 ## Optional Route 22 rival battle
 
 After the lab battle, entering the northern path on Route 22 can trigger one
