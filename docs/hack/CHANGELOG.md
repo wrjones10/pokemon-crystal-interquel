@@ -68,6 +68,22 @@ the player when issuing his challenge. Connected Pallet, Viridian, Pewter, and
 Cinnabar maps retain the correct NPC graphics when walking between maps or
 returning from battles. Surfing also preserves NPC graphics when the map reloads.
 
+## Optional Route 22 rival battle
+
+After the lab battle, entering the northern path on Route 22 can trigger one
+optional battle with the new rival. It is available only before receiving the
+Boulder Badge. Skipping it has no effect on progression.
+
+The rival leads with a level-9 Pidgey, followed by his lab starter at level 8.
+Neither Pokémon holds an item, and the rival has no usable battle items. The
+battle uses standard Kanto trainer music. After a win, he leaves; after a loss,
+the player blacks out normally and may retry until winning or earning the Boulder
+Badge. Winning completes the encounter.
+The rival appears as a single sprite and has animated approach and departure
+movements.
+
+See [Route 22 rival notes](route-22-rival.md) for implementation and playtesting.
+
 ## Route 2 and Viridian Forest
 
 - Route 2 uses Yellow's longer layout with Crystal artwork. Its main path now

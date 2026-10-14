@@ -1489,7 +1489,10 @@
 	const EVENT_VIRIDIAN_FOREST_HIDDEN_ANTIDOTE
 ; Pewter City east-exit guide (reserved visibility flag).
 	const EVENT_PEWTER_CITY_GYM_BLOCKER
-; Unused: next 22 events
+; Optional early Route 22 rival battle (reserved event ID).
+	const EVENT_BATTLED_ROUTE_22_RIVAL
+	const EVENT_ROUTE_22_RIVAL_HIDDEN
+; Unused: next 20 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

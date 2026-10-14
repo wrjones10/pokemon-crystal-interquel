@@ -3727,3 +3727,21 @@ PalletRivalGroup:
 	db "???@", TRAINERTYPE_ITEM
 	db 5, SQUIRTLE, NO_ITEM
 	db -1 ; end
+
+	; PALLET_RIVAL_ROUTE22_BULBASAUR -- optional pre-Boulder Badge battle
+	db "???@", TRAINERTYPE_ITEM
+	db 9, PIDGEY, NO_ITEM
+	db 8, BULBASAUR, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL_ROUTE22_CHARMANDER -- optional pre-Boulder Badge battle
+	db "???@", TRAINERTYPE_ITEM
+	db 9, PIDGEY, NO_ITEM
+	db 8, CHARMANDER, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL_ROUTE22_SQUIRTLE -- optional pre-Boulder Badge battle
+	db "???@", TRAINERTYPE_ITEM
+	db 9, PIDGEY, NO_ITEM
+	db 8, SQUIRTLE, NO_ITEM
+	db -1 ; end
