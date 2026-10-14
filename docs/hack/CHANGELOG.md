@@ -409,3 +409,20 @@ include relevant exceptions. Keep implementation details in the feature notes:
 - The original 50 TMs retain their moves and numbers. This addition expands TM
   inventory storage and changes HM item IDs; saves from earlier builds are not
   compatible. Start a new game with this version.
+
+## Badge stat boosts
+
+Battle stat boosts now come from Kanto badges instead of Johto badges:
+
+| Badge | Stat boosted |
+|---|---|
+| Boulder | Attack |
+| Soul | Defense |
+| Thunder | Speed |
+| Volcano | Special Attack and Special Defense |
+
+- Each boost adds one eighth of the stat, rounded down, with the existing cap
+  of 999. Link battles and Battle Tower battles still receive no badge boosts.
+- The Volcano Badge reliably boosts both special stats, correcting Crystal's
+  inconsistent Special Defense badge boost.
+- Johto leaders' dialogue no longer promises stat boosts.

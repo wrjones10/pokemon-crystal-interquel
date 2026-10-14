@@ -6769,15 +6769,10 @@ BadgeStatBoosts:
 ; Raise the stats of the battle mon in wBattleMon
 ; depending on which badges have been obtained.
 
-; Every other badge boosts a stat, starting from the first.
-; GlacierBadge also boosts Special Defense, although the relevant code is buggy (see below).
-
-; 	ZephyrBadge:  Attack
-; 	PlainBadge:   Speed
-; 	MineralBadge: Defense
-; 	GlacierBadge: Special Attack and Special Defense
-
-; The boosted stats are in order, except PlainBadge and MineralBadge's boosts are swapped.
+; BoulderBadge: Attack
+; SoulBadge: Defense
+; ThunderBadge: Speed
+; VolcanoBadge: Special Attack and Special Defense
 
 	ld a, [wLinkMode]
 	and a
@@ -6787,21 +6782,21 @@ BadgeStatBoosts:
 	and a
 	ret nz
 
-	ld a, [wJohtoBadges]
+	ld a, [wKantoBadges]
 
-; Swap badges 3 (PlainBadge) and 5 (MineralBadge).
+; Swap ThunderBadge and SoulBadge to match the battle stat order.
 	ld d, a
-	and (1 << PLAINBADGE)
+	and (1 << THUNDERBADGE)
 	add a
 	add a
 	ld b, a
 	ld a, d
-	and (1 << MINERALBADGE)
+	and (1 << SOULBADGE)
 	rrca
 	rrca
 	ld c, a
 	ld a, d
-	and ((1 << ZEPHYRBADGE) | (1 << HIVEBADGE) | (1 << FOGBADGE) | (1 << STORMBADGE) | (1 << GLACIERBADGE) | (1 << RISINGBADGE))
+	and ((1 << BOULDERBADGE) | (1 << CASCADEBADGE) | (1 << RAINBOWBADGE) | (1 << MARSHBADGE) | (1 << VOLCANOBADGE) | (1 << EARTHBADGE))
 	or b
 	or c
 	ld b, a
@@ -6809,7 +6804,6 @@ BadgeStatBoosts:
 	ld hl, wBattleMonAttack
 	ld c, 4
 .CheckBadge:
-; BUG: Glacier Badge may not boost Special Defense depending on the value of Special Attack (see docs/bugs_and_glitches.md)
 	ld a, b
 	srl b
 	call c, BoostStat
@@ -6819,8 +6813,10 @@ BadgeStatBoosts:
 	srl b
 	dec c
 	jr nz, .CheckBadge
-	srl a
-	call c, BoostStat
+; BoostStat changes a, so check the badge directly for Special Defense.
+	ld a, [wKantoBadges]
+	bit VOLCANOBADGE, a
+	call nz, BoostStat
 	ret
 
 BoostStat:
