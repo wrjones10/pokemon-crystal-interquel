@@ -594,9 +594,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (5)
 	db "DANNY@", TRAINERTYPE_NORMAL
-	db 31, JYNX
-	db 31, ELECTABUZZ
-	db 31, MAGMAR
+	db 3, PIDGEY
 	db -1 ; end
 
 	; SCHOOLBOY (6)
