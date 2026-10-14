@@ -52,4 +52,6 @@ Tilesets::
 	tileset TilesetAerodactylWordRoom
 	tileset TilesetViridianForest
 	tileset TilesetRoute2
+	tileset TilesetMuseum
+	tileset TilesetPewter
 	assert_table_length NUM_TILESETS + 1

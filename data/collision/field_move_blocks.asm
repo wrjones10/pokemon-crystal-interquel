@@ -3,6 +3,7 @@ CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_JOHTO,        .johto
 	dbw TILESET_JOHTO_MODERN, .johto_modern
+	dbw TILESET_PEWTER,       .pewter
 	dbw TILESET_KANTO,        .kanto
 	dbw TILESET_ROUTE_2,      .kanto
 	dbw TILESET_PARK,         .park
@@ -52,6 +53,17 @@ CutTreeBlockPointers:
 	db $0f, $17, 0
 	db -1 ; end
 
+
+.pewter:
+; facing block, replacement block, animation
+	db $0b, $0a, 1 ; grass
+	db $32, $6d, 0 ; tree
+	db $33, $6c, 0 ; tree
+	db $34, $6f, 0 ; tree
+	db $35, $4c, 0 ; tree
+	db $60, $6e, 0 ; tree
+	db $7a, $7b, 0 ; museum rear access tree
+	db -1 ; end
 
 ; these blocks all use COLL_WHIRLPOOL in one quadrant
 WhirlpoolBlockPointers:

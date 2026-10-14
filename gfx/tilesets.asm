@@ -6,6 +6,7 @@ ENDM
 
 SECTION "Tileset Data 1", ROMX
 
+TilesetPewterGFX::
 TilesetRoute2GFX::
 TilesetKantoGFX::
 INCBIN "gfx/tilesets/kanto.2bpp.lz"
@@ -352,3 +353,19 @@ TilesetRoute2Meta::
 INCBIN "data/tilesets/route_2_metatiles.bin"
 TilesetRoute2Coll::
 INCLUDE "data/tilesets/route_2_collision.asm"
+
+SECTION "Pewter Museum Tilesets", ROMX
+TilesetMuseumGFX::
+INCBIN "gfx/tilesets/museum.2bpp.lz"
+TilesetMuseumMeta::
+INCBIN "data/tilesets/museum_metatiles.bin"
+TilesetMuseumColl::
+INCLUDE "data/tilesets/museum_collision.asm"
+TilesetPewterMeta::
+INCBIN "data/tilesets/pewter_metatiles.bin"
+TilesetPewterColl::
+INCLUDE "data/tilesets/pewter_collision.asm"
+
+SECTION "Museum Fossil Pictures", ROMX
+MuseumAerodactylFossilGFX:: INCBIN "gfx/museum/aerodactyl_fossil.2bpp"
+MuseumKabutopsFossilGFX:: INCBIN "gfx/museum/kabutops_fossil.2bpp"

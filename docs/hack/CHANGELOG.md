@@ -128,6 +128,23 @@ the trainer class's Hyper Potion.
 See [Pewter Gym blocker notes](pewter-gym-blocker.md) for implementation and
 playtesting details.
 
+## Pewter Museum of Science
+
+Pewter City's museum is open again. Both floors restore Yellow's layout, museum
+artwork, exhibits and NPC dialogue, using Crystal equivalents for human sprites.
+Admission to the public gallery costs ₽50 per visit; declining or lacking the
+money keeps the player outside the exhibits. The upstairs space exhibit is
+accessible after admission.
+Museum floor blocks are translated to Crystal's format to avoid black,
+impassable patches.
+
+A separate rear entrance requires Cut. The scientist in that room gives **Old
+Amber** once, and its display disappears after receiving it. A full Bag leaves
+the gift available for later. Old Amber is a protected Key Item; fossil revival
+has not been implemented yet.
+
+See [Pewter Museum notes](pewter-museum.md) for details and playtesting.
+
 ## Viridian Gym investigation
 
 A stationary police officer stands immediately below the Viridian Gym door and

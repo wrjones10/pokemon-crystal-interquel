@@ -493,3 +493,7 @@ SECTION "Viridian Forest Map Scripts", ROMX
 INCLUDE "maps/ViridianForest.asm"
 INCLUDE "maps/ViridianForestNorthGate.asm"
 INCLUDE "maps/ViridianForestSouthGate.asm"
+
+SECTION "Pewter Museum Scripts", ROMX
+INCLUDE "maps/PewterMuseum1F.asm"
+INCLUDE "maps/PewterMuseum2F.asm"

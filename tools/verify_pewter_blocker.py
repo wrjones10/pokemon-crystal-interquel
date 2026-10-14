@@ -128,7 +128,7 @@ class ScriptCheck:
 
 
 def main():
-    city = Map("PewterCity", 20, 18, "kanto", "PEWTER_CITY")
+    city = Map("PewterCity", 20, 18, "pewter", "PEWTER_CITY")
     triggers = {(int(x), int(y)) for x, y in re.findall(
         r"coord_event\s+(\d+),\s*(\d+), -1, PewterCityGymBlockerScript", SOURCE)}
     assert triggers >= {(35, 17), (36, 17)} | {(37, y) for y in range(16, 20)}

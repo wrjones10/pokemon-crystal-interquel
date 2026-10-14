@@ -717,3 +717,6 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00
+
+	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $0a
+	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $0a

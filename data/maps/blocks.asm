@@ -1058,3 +1058,9 @@ ViridianForestNorthGate_Blocks:
 
 ViridianForestSouthGate_Blocks:
 	INCBIN "maps/ViridianForestSouthGate.blk"
+
+SECTION "Pewter Museum Map Blocks", ROMX
+PewterMuseum1F_Blocks:
+INCBIN "maps/PewterMuseum1F.blk"
+PewterMuseum2F_Blocks:
+INCBIN "maps/PewterMuseum2F.blk"

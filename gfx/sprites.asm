@@ -111,3 +111,6 @@ SECTION "Surfing Player Sprites", ROMX
 
 ChrisSurfSpriteGFX::           INCBIN "gfx/sprites/chris_surf.2bpp"
 KrisSurfSpriteGFX::            INCBIN "gfx/sprites/kris_surf.2bpp"
+
+SECTION "Museum Old Amber Sprite", ROMX
+OldAmberSpriteGFX:: INCBIN "gfx/sprites/old_amber.2bpp"

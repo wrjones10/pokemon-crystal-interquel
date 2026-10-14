@@ -8,6 +8,7 @@ MACRO tilepal
 	endr
 ENDM
 
+TilesetPewterPalMap:
 TilesetRoute2PalMap:
 TilesetKantoPalMap:
 INCLUDE "gfx/tilesets/kanto_palette_map.asm"
@@ -117,3 +118,6 @@ endr
 
 TilesetViridianForestPalMap:
 INCLUDE "gfx/tilesets/viridian_forest_palette_map.asm"
+
+TilesetMuseumPalMap:
+INCLUDE "gfx/tilesets/unused_museum_palette_map.asm"

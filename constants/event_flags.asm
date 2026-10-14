@@ -1494,7 +1494,10 @@
 	const EVENT_ROUTE_22_RIVAL_HIDDEN
 ; Viridian Gym investigation officer (reserved visibility flag).
 	const EVENT_VIRIDIAN_GYM_OFFICER_HIDDEN
-; Unused: next 19 events
+; Pewter Museum restoration (reserved event IDs).
+	const EVENT_BOUGHT_MUSEUM_TICKET
+	const EVENT_GOT_OLD_AMBER
+; Unused: next 17 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

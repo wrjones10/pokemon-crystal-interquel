@@ -9,6 +9,7 @@ ENDM
 
 Tileset0Anim:
 TilesetJohtoModernAnim:
+TilesetPewterAnim:
 TilesetRoute2Anim:
 TilesetKantoAnim:
 	tileframe AnimateWaterTile,        vTiles2 tile $14
@@ -257,6 +258,7 @@ TilesetTrainStationAnim:
 TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
 TilesetPlayersRoomAnim:
+TilesetMuseumAnim:
 TilesetPokeComCenterAnim:
 TilesetBattleTowerInsideAnim:
 TilesetRuinsOfAlphAnim:
