@@ -1497,7 +1497,9 @@
 ; Pewter Museum restoration (reserved event IDs).
 	const EVENT_BOUGHT_MUSEUM_TICKET
 	const EVENT_GOT_OLD_AMBER
-; Unused: next 17 events
+; Brock's TM reward (reserved event ID).
+	const EVENT_GOT_TM51_ROCK_THROW
+; Unused: next 16 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

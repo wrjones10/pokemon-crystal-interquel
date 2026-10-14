@@ -28,11 +28,22 @@ PewterGymBrockScript:
 	waitsfx
 	setflag ENGINE_BOULDERBADGE
 	writetext BrockBoulderBadgeText
+	promptbutton
+.FightDone:
+	checkevent EVENT_GOT_TM51_ROCK_THROW
+	iftrue .GotRockThrow
+	writetext BrockTMRewardText
+	promptbutton
+	verbosegiveitem TM_ROCK_THROW
+	iffalse .NoRoomForRockThrow
+	setevent EVENT_GOT_TM51_ROCK_THROW
+	writetext BrockRockThrowText
 	waitbutton
+.NoRoomForRockThrow:
 	closetext
 	end
 
-.FightDone:
+.GotRockThrow:
 	writetext BrockFightDoneText
 	waitbutton
 	closetext
@@ -129,6 +140,27 @@ BrockBoulderBadgeText:
 
 	para "#MON even more"
 	line "powerful."
+	done
+
+BrockTMRewardText:
+	text "BROCK: Take this"
+	line "TM as a gift, too."
+	done
+
+BrockRockThrowText:
+	text "TM51 contains"
+	line "ROCK THROW."
+
+	para "It hurls rocks at"
+	line "the foe to inflict"
+	cont "damage."
+
+	para "A TM teaches a"
+	line "move to a #MON."
+
+	para "But it can only"
+	line "be used once, so"
+	cont "choose carefully!"
 	done
 
 BrockFightDoneText:

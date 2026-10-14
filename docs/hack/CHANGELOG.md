@@ -399,3 +399,13 @@ include relevant exceptions. Keep implementation details in the feature notes:
 - [Debug bedroom radio setup and testing](debug-radio.md)
 - [Route 2 and Viridian Forest](route-2-viridian-forest.md)
 - [Pewter City Gym guide and exit blocker](pewter-gym-blocker.md)
+
+## Brock's TM reward
+
+- Brock awards **TM51 (Rock Throw)** once after the Boulder Badge. If the TM
+  cannot be received, talking to him again allows another attempt.
+- Rock Throw can be taught to Geodude, Graveler, Golem, Onix, Sudowoodo, Steelix,
+  Slugma, Magcargo, and Mew. Like other TMs, it is consumed when used.
+- The original 50 TMs retain their moves and numbers. This addition expands TM
+  inventory storage and changes HM item IDs; saves from earlier builds are not
+  compatible. Start a new game with this version.
