@@ -3,16 +3,58 @@
 	const VIRIDIANCITY_GRAMPS2
 	const VIRIDIANCITY_FISHER
 	const VIRIDIANCITY_YOUNGSTER
+	const VIRIDIANCITY_GYM_OFFICER
 
 ViridianCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, ViridianCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, ViridianCityGymOfficerCallback
 
 ViridianCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIRIDIAN
 	endcallback
+
+; LoadObjectMasks rebuilds visibility after this callback, so set the object's
+; dedicated flag instead of changing the temporary object mask.
+ViridianCityGymOfficerCallback:
+	checkflag ENGINE_BOULDERBADGE
+	iffalse .Visible
+	checkflag ENGINE_CASCADEBADGE
+	iffalse .Visible
+	checkflag ENGINE_THUNDERBADGE
+	iffalse .Visible
+	checkflag ENGINE_RAINBOWBADGE
+	iffalse .Visible
+	checkflag ENGINE_SOULBADGE
+	iffalse .Visible
+	checkflag ENGINE_MARSHBADGE
+	iffalse .Visible
+	checkflag ENGINE_VOLCANOBADGE
+	iffalse .Visible
+	setevent EVENT_VIRIDIAN_GYM_OFFICER_HIDDEN
+	endcallback
+.Visible:
+	clearevent EVENT_VIRIDIAN_GYM_OFFICER_HIDDEN
+	endcallback
+
+ViridianCityGymOfficerScript:
+	jumptextfaceplayer ViridianCityGymOfficerText
+
+ViridianCityGymOfficerText:
+	text "The #MON GYM's"
+	line "LEADER turned out"
+	cont "to be a criminal"
+	cont "mastermind!"
+
+	para "We're conducting"
+	line "an investigation"
+	cont "inside."
+
+	para "You'll have to"
+	line "come back later."
+	done
 
 ViridianCityCoffeeGramps:
 	faceplayer
@@ -238,3 +280,4 @@ ViridianCity_MapEvents:
 	object_event 30,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
 	object_event  6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
 	object_event 17, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1
+	object_event 32, 8, SPRITE_STANDING_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGymOfficerScript, EVENT_VIRIDIAN_GYM_OFFICER_HIDDEN

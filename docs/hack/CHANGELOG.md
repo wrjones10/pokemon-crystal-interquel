@@ -128,6 +128,14 @@ the trainer class's Hyper Potion.
 See [Pewter Gym blocker notes](pewter-gym-blocker.md) for implementation and
 playtesting details.
 
+## Viridian Gym investigation
+
+A stationary police officer stands immediately below the Viridian Gym door and
+blocks entry until the player has all seven other Kanto badges: Boulder, Cascade,
+Thunder, Rainbow, Soul, Marsh and Volcano. The Earth Badge and Johto badges do
+not affect this requirement. Talking to the officer explains that the Gym Leader
+was a criminal mastermind and an investigation is taking place inside.
+
 ## Boss rematch preparation
 
 All 16 Gym Leaders, the four Elite Four members, and Champion Lance have separate

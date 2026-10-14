@@ -43,7 +43,7 @@ CinnabarGroupSprites:
 	db SPRITE_FAMICOM
 	db SPRITE_POKEDEX
 	db SPRITE_OAK ; replaces unused WILL; keep GRAMPS for Viridian/Pewter
-	db SPRITE_KAREN
+	db SPRITE_STANDING_OFFICER ; replaces unused KAREN, preserving sprite types/slots
 	db SPRITE_NURSE
 	db SPRITE_OLD_LINK_RECEPTIONIST
 	db SPRITE_BIG_LAPRAS
