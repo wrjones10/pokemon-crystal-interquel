@@ -17,8 +17,11 @@ retains Crystal's five-block offset to meet the existing city's western road;
 Cerulean's blocks are unchanged. The upper Route 4 bank can be reached later
 from Cerulean's water. Its original Yellow Lass is level 31.
 
-Mt. Moon's interior, map ID, NPCs, scenes, and internal warps are retained.
-Only the two outdoor return destinations change: the western exit returns to
+Mt. Moon's interior layout, map ID, and internal warps are retained. Crystal's
+Silver encounter and overworld object are disabled; both existing scene IDs
+remain valid as no-ops. Its victory flag is not granted, so this removal does
+not unlock later Silver events gated by that flag. The two outdoor return
+destinations change: the western exit returns to
 Route 4 warp 2 and the eastern exit to Route 4 warp 3. Restoring the Gen I cave
 is separate work. Dig continues to use the actual cave entrance.
 

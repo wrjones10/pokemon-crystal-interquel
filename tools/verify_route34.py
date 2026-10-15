@@ -128,6 +128,7 @@ def source_checks():
     for n in ('Route3','Route4'):
         assert f'callback MAPCALLBACK_OBJECTS, {n}RefreshSprites' in (ROOT/f'maps/{n}.asm').read_text()
     assert 'spawn ROUTE_4,                    11,  6' in (ROOT/'data/maps/spawn_points.asm').read_text()
+    assert not MAPS['MOUNT_MOON'].objects
     print('Source geometry, connections, warps, NPC interactions and trainer sight passed')
 
 
@@ -257,6 +258,11 @@ def compiled_checks(stem):
             else:raise AssertionError('refresh selector loop')
             assert memory[symbols['wScriptVar'][1]]==int(entry==0xf7 and slot<0)
             assert bytes(memory[used:used+64])==previous
+    # Both legacy Mt. Moon scene IDs must resolve to the same immediate end.
+    moon=data('MountMoon_MapScripts')
+    noop=symbols['MountMoonNoopScene'][1].to_bytes(2,'little')
+    assert moon[:10]==bytes([2])+noop+bytes(2)+noop+bytes(2)+bytes([0])
+    assert data('MountMoonNoopScene')[0]==0x91
     assert data('SpriteMons')[35]==113 # appended Chansey; previous sprite IDs retained
     print(f'{stem}: compiled map metadata, nine parties, {cases} salesman outcomes and 792 conditional-refresh cases passed')
 

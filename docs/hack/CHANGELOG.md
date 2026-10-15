@@ -462,3 +462,9 @@ Route entry avoids redundant sprite graphics reloads when the correct outdoor
 sprite group is already loaded, including entry from Pewter and returns from
 buildings or battles. Crossing between the two routes refreshes sprites only
 when needed to preserve their artwork.
+
+## Mt. Moon rival encounter
+
+Crystal's Silver encounter in Mt. Moon is removed, including his overworld
+appearance and forced battle. Mt. Moon's layout and travel routes are retained.
+The new Pallet rival's lab and Route 22 battles are unaffected.
