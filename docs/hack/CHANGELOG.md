@@ -4,7 +4,7 @@ This is the master record of player-facing changes from the original Pokémon
 Crystal ROM. It describes the current game, including changes that supersede
 earlier behavior, rather than listing every development revision.
 
-Last updated: October 14, 2026.
+Last updated: October 15, 2026.
 
 ## Opening and starting location
 
@@ -262,14 +262,23 @@ the center of the range.
 
 For example, a slot listed at level 5 can produce levels 5–9, with the lower
 levels more common. Surf already had this variance in Crystal; the same
-behavior now also applies on land. Species and encounter-slot probabilities
-are retained.
+behavior now also applies on land. Level variance does not change which
+species is selected.
 
 Special encounters retain their existing level rules. This includes scripted
 legendary encounters, roaming Pokémon, the red Gyarados, fishing, Headbutt,
 Rock Smash, and the Bug-Catching Contest. Only normal encounter types receive
 the added variance; Sweet Scent uses the normal encounter selection outside
 the contest.
+
+## Wild encounter probabilities
+
+Grass and cave encounter slots now use **30%, 20%, 20%, 10%, 10%, 5%, 5%**,
+replacing Crystal's 30%, 30%, 20%, 10%, 5%, 4%, 1%. This applies throughout
+Kanto and Johto, including grass swarms and all times of day. Repeated species
+combine the chances of their slots. Overall encounter frequency, listed levels,
+and level variance are unaffected. Surfing and other encounter methods retain
+their existing probabilities.
 
 ## Fishing while surfing
 
