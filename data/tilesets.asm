@@ -54,4 +54,5 @@ Tilesets::
 	tileset TilesetRoute2
 	tileset TilesetMuseum
 	tileset TilesetPewter
+	tileset TilesetRoute34
 	assert_table_length NUM_TILESETS + 1

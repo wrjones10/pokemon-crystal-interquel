@@ -8,6 +8,7 @@ SECTION "Tileset Data 1", ROMX
 
 TilesetPewterGFX::
 TilesetRoute2GFX::
+TilesetRoute34GFX::
 TilesetKantoGFX::
 INCBIN "gfx/tilesets/kanto.2bpp.lz"
 
@@ -369,3 +370,9 @@ INCLUDE "data/tilesets/pewter_collision.asm"
 SECTION "Museum Fossil Pictures", ROMX
 MuseumAerodactylFossilGFX:: INCBIN "gfx/museum/aerodactyl_fossil.2bpp"
 MuseumKabutopsFossilGFX:: INCBIN "gfx/museum/kabutops_fossil.2bpp"
+
+SECTION "Route 3 and 4 Blockset", ROMX
+TilesetRoute34Meta::
+INCBIN "data/tilesets/route_3_4_metatiles.bin"
+TilesetRoute34Coll::
+INCLUDE "data/tilesets/route_3_4_collision.asm"

@@ -10,6 +10,7 @@ ENDM
 
 TilesetPewterPalMap:
 TilesetRoute2PalMap:
+TilesetRoute34PalMap:
 TilesetKantoPalMap:
 INCLUDE "gfx/tilesets/kanto_palette_map.asm"
 

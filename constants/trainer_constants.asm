@@ -143,6 +143,9 @@ DEF KRIS EQU __trainer_class__
 	const JOEY4
 	const JOEY5
 
+	const YELLOW_ROUTE3_YOUNGSTER_1
+	const YELLOW_ROUTE3_YOUNGSTER_2
+
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
 	const KIPP
@@ -210,6 +213,11 @@ DEF KRIS EQU __trainer_class__
 	const DANA5
 
 	const VIRIDIAN_FOREST_LASS
+
+	const YELLOW_ROUTE3_LASS_1
+	const YELLOW_ROUTE3_LASS_2
+	const YELLOW_ROUTE3_LASS_3
+	const YELLOW_ROUTE4_LASS
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -374,6 +382,10 @@ DEF KRIS EQU __trainer_class__
 	const VIRIDIAN_FOREST_BUG_CATCHER_2
 	const VIRIDIAN_FOREST_BUG_CATCHER_3
 	const VIRIDIAN_FOREST_BUG_CATCHER_4
+
+	const YELLOW_ROUTE3_BUG_CATCHER_1
+	const YELLOW_ROUTE3_BUG_CATCHER_2
+	const YELLOW_ROUTE3_BUG_CATCHER_3
 
 	trainerclass FISHER ; 25
 	const JUSTIN

@@ -5,6 +5,7 @@ CutTreeBlockPointers:
 	dbw TILESET_JOHTO_MODERN, .johto_modern
 	dbw TILESET_PEWTER,       .pewter
 	dbw TILESET_KANTO,        .kanto
+	dbw TILESET_ROUTE_3_4,    .kanto
 	dbw TILESET_ROUTE_2,      .kanto
 	dbw TILESET_PARK,         .park
 	dbw TILESET_FOREST,       .forest

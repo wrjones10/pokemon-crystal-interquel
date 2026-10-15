@@ -11,6 +11,7 @@ Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetPewterAnim:
 TilesetRoute2Anim:
+TilesetRoute34Anim:
 TilesetKantoAnim:
 	tileframe AnimateWaterTile,        vTiles2 tile $14
 	tileframe WaitTileAnimation

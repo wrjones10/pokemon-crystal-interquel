@@ -250,7 +250,7 @@ ENDM
 
 	map_attributes PewterCity, PEWTER_CITY, $0f
 	connection south, Route2, ROUTE_2, 5
-	connection east, Route3, ROUTE_3, 5
+	connection east, Route3, ROUTE_3, 4
 
 	map_attributes Route2, ROUTE_2, $0f
 	connection north, PewterCity, PEWTER_CITY, -5
@@ -375,11 +375,11 @@ ENDM
 	connection south, Route24, ROUTE_24, 0
 
 	map_attributes Route3, ROUTE_3, $2c
-	connection west, PewterCity, PEWTER_CITY, -5
-	connection east, Route4, ROUTE_4, 0
+	connection north, Route4, ROUTE_4, 25
+	connection west, PewterCity, PEWTER_CITY, -4
 
 	map_attributes Route4, ROUTE_4, $2c
-	connection west, Route3, ROUTE_3, 0
+	connection south, Route3, ROUTE_3, -25
 	connection east, CeruleanCity, CERULEAN_CITY, -5
 
 	map_attributes Route8, ROUTE_8, $2c
@@ -720,3 +720,8 @@ ENDM
 
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $0a
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $0a
+
+PUSHS
+SECTION "MtMoon Center Attributes", ROMX
+	map_attributes MtMoonPokecenter, MT_MOON_POKECENTER, $00
+POPS

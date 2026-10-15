@@ -564,6 +564,20 @@ YoungsterGroup:
 	db 37, RATICATE,   HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
+	; YOUNGSTER, YELLOW_ROUTE3_YOUNGSTER_1 (Yellow)
+YellowRoute3Youngster1Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 11, RATTATA
+	db 11, EKANS
+	db -1 ; end
+
+	; YOUNGSTER, YELLOW_ROUTE3_YOUNGSTER_2 (Yellow)
+YellowRoute3Youngster2Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 14, SPEAROW
+	db -1 ; end
+
+
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
@@ -944,6 +958,35 @@ LassGroup:
 	db 6, NIDORAN_F
 	db 6, NIDORAN_M
 	db -1 ; end
+
+	; LASS, YELLOW_ROUTE3_LASS_1 (Yellow)
+YellowRoute3Lass1Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db  9, PIDGEY
+	db  9, PIDGEY
+	db -1 ; end
+
+	; LASS, YELLOW_ROUTE3_LASS_2 (Yellow)
+YellowRoute3Lass2Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 10, RATTATA
+	db 10, NIDORAN_M
+	db -1 ; end
+
+	; LASS, YELLOW_ROUTE3_LASS_3 (Yellow)
+YellowRoute3Lass3Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 14, JIGGLYPUFF
+	db -1 ; end
+
+	; LASS, YELLOW_ROUTE4_LASS (Yellow)
+YellowRoute4LassParty:
+	db "???@", TRAINERTYPE_NORMAL
+	db 31, PARAS
+	db 31, PARAS
+	db 31, PARASECT
+	db -1 ; end
+
 
 JanineGroup:
 	; JANINE (1)
@@ -1807,6 +1850,31 @@ BugCatcherGroup:
 	db 8, CATERPIE
 	db 8, METAPOD
 	db -1 ; end
+
+	; BUG_CATCHER, YELLOW_ROUTE3_BUG_CATCHER_1 (Yellow)
+YellowRoute3BugCatcher1Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 10, CATERPIE
+	db 10, WEEDLE
+	db 10, CATERPIE
+	db -1 ; end
+
+	; BUG_CATCHER, YELLOW_ROUTE3_BUG_CATCHER_2 (Yellow)
+YellowRoute3BugCatcher2Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db  9, WEEDLE
+	db  9, KAKUNA
+	db  9, CATERPIE
+	db  9, METAPOD
+	db -1 ; end
+
+	; BUG_CATCHER, YELLOW_ROUTE3_BUG_CATCHER_3 (Yellow)
+YellowRoute3BugCatcher3Party:
+	db "???@", TRAINERTYPE_NORMAL
+	db 11, CATERPIE
+	db 11, METAPOD
+	db -1 ; end
+
 
 FisherGroup:
 	; FISHER (1)

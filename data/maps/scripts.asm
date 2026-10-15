@@ -473,8 +473,6 @@ INCLUDE "maps/LavenderTown.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route24.asm"
-INCLUDE "maps/Route3.asm"
-INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
@@ -497,3 +495,8 @@ INCLUDE "maps/ViridianForestSouthGate.asm"
 SECTION "Pewter Museum Scripts", ROMX
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
+
+SECTION "Route 3 and 4 Map Scripts", ROMX
+INCLUDE "maps/Route3.asm"
+INCLUDE "maps/Route4.asm"
+INCLUDE "maps/MtMoonPokecenter.asm"

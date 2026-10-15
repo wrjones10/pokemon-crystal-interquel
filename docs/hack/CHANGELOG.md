@@ -435,3 +435,30 @@ Battle stat boosts now come from Kanto badges instead of Johto badges:
 - The Volcano Badge reliably boosts both special stats, correcting Crystal's
   inconsistent Special Defense badge boost.
 - Johto leaders' dialogue no longer promises stat boosts.
+
+## Route 3, Route 4, and the Mt. Moon Pokémon Center
+
+- Routes 3 and 4 follow Yellow's original layouts, using Crystal artwork. Route
+  3 connects north to the western Route 4 area containing the Pokémon Center
+  and cave entrance. Yellow's one-way ledges and signs are restored.
+- The routes' seven Crystal trainers are replaced with Yellow's eight Route 3
+  trainers and one Route 4 trainer, with their original parties and dialogue.
+  The Route 4 Lass retains her level-31 team on the upper bank. Yellow's two
+  non-battling outdoor NPCs return as well.
+- Yellow's Route 4 item position now gives **TM05 (Roar)**. Crystal's HP Up and
+  hidden Ultra Ball are removed from the route.
+- The new Mt. Moon Pokémon Center restores Yellow's NPC placements and dialogue,
+  with Crystal healing and PC access. Entering it establishes a nearby blackout
+  return point. It uses Crystal's standard interior and upstairs link facilities;
+  no Fly destination is added.
+- The salesman offers one **level-5 Magikarp for ₽500**. It can go to the PC Box
+  if the party is full. Failed receipt does not consume money or the purchase.
+- Mt. Moon's existing interior is retained, with its entrance and exit connected
+  to the restored Route 4. Both routes' current wild encounter tables are retained.
+
+See [Route 3 and 4 notes](route-3-4.md) for placements and validation.
+
+Route entry avoids redundant sprite graphics reloads when the correct outdoor
+sprite group is already loaded, including entry from Pewter and returns from
+buildings or battles. Crossing between the two routes refreshes sprites only
+when needed to preserve their artwork.

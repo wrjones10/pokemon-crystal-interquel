@@ -40,6 +40,7 @@
 	const TILESET_ROUTE_2               ; 26
 	const TILESET_MUSEUM
 	const TILESET_PEWTER
+	const TILESET_ROUTE_3_4
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

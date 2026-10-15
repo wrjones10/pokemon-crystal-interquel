@@ -94,9 +94,6 @@ Route24_Blocks:
 BetaVioletCity_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaVioletCity.blk"
 
-Route3_Blocks:
-	INCBIN "maps/Route3.blk"
-
 PewterCity_Blocks:
 	INCBIN "maps/PewterCity.blk"
 
@@ -219,9 +216,6 @@ BetaCherrygroveCity_Blocks: ; unreferenced
 
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"
-
-Route4_Blocks:
-	INCBIN "maps/Route4.blk"
 
 Route8_Blocks:
 	INCBIN "maps/Route8.blk"
@@ -1064,3 +1058,11 @@ PewterMuseum1F_Blocks:
 INCBIN "maps/PewterMuseum1F.blk"
 PewterMuseum2F_Blocks:
 INCBIN "maps/PewterMuseum2F.blk"
+
+SECTION "Route 3 and 4 Map Blocks", ROMX
+Route3_Blocks:
+	INCBIN "maps/Route3.blk"
+Route4_Blocks:
+	INCBIN "maps/Route4.blk"
+MtMoonPokecenter_Blocks:
+	INCBIN "maps/MtMoonPokecenter.blk"
