@@ -2175,9 +2175,8 @@ SwimmerMGroup:
 
 	; SWIMMERM (21)
 	db "PARKER@", TRAINERTYPE_NORMAL
-	db 32, HORSEA
-	db 32, HORSEA
-	db 35, SEADRA
+	db 16, HORSEA
+	db 16, SHELLDER
 	db -1 ; end
 
 SwimmerFGroup:
@@ -2280,13 +2279,12 @@ SwimmerFGroup:
 
 	; SWIMMERF (18)
 	db "DIANA@", TRAINERTYPE_NORMAL
-	db 37, GOLDUCK
+	db 17, PSYDUCK
 	db -1 ; end
 
 	; SWIMMERF (19)
 	db "BRIANA@", TRAINERTYPE_NORMAL
-	db 35, SEAKING
-	db 35, SEAKING
+	db 18, GOLDEEN
 	db -1 ; end
 
 SailorGroup:
@@ -3797,18 +3795,18 @@ PalletRivalGroup:
 
 	; PALLET_RIVAL_ROUTE22_BULBASAUR -- optional pre-Boulder Badge battle
 	db "???@", TRAINERTYPE_ITEM
-	db 9, PIDGEY, NO_ITEM
+	db 7, NIDORAN_F, NO_ITEM
 	db 8, BULBASAUR, NO_ITEM
 	db -1 ; end
 
 	; PALLET_RIVAL_ROUTE22_CHARMANDER -- optional pre-Boulder Badge battle
 	db "???@", TRAINERTYPE_ITEM
-	db 9, PIDGEY, NO_ITEM
+	db 7, NIDORAN_F, NO_ITEM
 	db 8, CHARMANDER, NO_ITEM
 	db -1 ; end
 
 	; PALLET_RIVAL_ROUTE22_SQUIRTLE -- optional pre-Boulder Badge battle
 	db "???@", TRAINERTYPE_ITEM
-	db 9, PIDGEY, NO_ITEM
+	db 7, NIDORAN_F, NO_ITEM
 	db 8, SQUIRTLE, NO_ITEM
 	db -1 ; end

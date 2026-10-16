@@ -692,7 +692,13 @@ BattleCommand_CheckObedience:
 	ld a, 30
 	jr nz, .getlevel
 
-	; no badges
+	; Cascade also grants Yellow's level-30 obedience threshold.
+	ld hl, wKantoBadges
+	bit CASCADEBADGE, [hl]
+	ld a, 30
+	jr nz, .getlevel
+
+	; no obedience badges
 	ld a, 10
 
 .getlevel

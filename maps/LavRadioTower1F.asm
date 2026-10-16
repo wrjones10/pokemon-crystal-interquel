@@ -24,14 +24,7 @@ LavRadioTower1FGentlemanScript:
 	opentext
 	checkflag ENGINE_EXPN_CARD
 	iftrue .GotExpnCard
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext LavRadioTower1FGentlemanText
-	waitbutton
-	closetext
-	end
 
-.ReturnedMachinePart:
 	writetext LavRadioTower1FGentlemanText_ReturnedMachinePart
 	promptbutton
 	getstring STRING_BUFFER_4, .expncardname
@@ -129,20 +122,16 @@ LavRadioTower1FGentlemanText:
 	done
 
 LavRadioTower1FGentlemanText_ReturnedMachinePart:
-	text "Ah! So you're the"
-	line "<PLAY_G> who solved"
+	text "Welcome to KANTO's"
+	line "RADIO STATION!"
 
-	para "the POWER PLANT's"
-	line "problem?"
+	para "This EXPN CARD"
+	line "lets your radio"
 
-	para "Thanks to you, I"
-	line "never lost my job."
+	para "receive programs"
+	line "throughout KANTO."
 
-	para "I tell you, you're"
-	line "a real lifesaver!"
-
-	para "Please take this"
-	line "as my thanks."
+	para "Please take one!"
 	done
 
 LavRadioTower1FGentlemanText_GotExpnCard:

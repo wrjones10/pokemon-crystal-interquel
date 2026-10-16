@@ -16,14 +16,7 @@ SaffronMagnetTrainStationNoopScene:
 SaffronMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .MagnetTrainToGoldenrod
-	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
-	waitbutton
-	closetext
-	end
 
-.MagnetTrainToGoldenrod:
 	writetext SaffronMagnetTrainStationOfficerAreYouComingOnBoardText
 	yesorno
 	iffalse .DecidedNotToRide
@@ -71,14 +64,6 @@ Script_ArriveFromGoldenrod:
 SaffronMagnetTrainStationGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronMagnetTrainStationGymGuideText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart
 	waitbutton
 	closetext

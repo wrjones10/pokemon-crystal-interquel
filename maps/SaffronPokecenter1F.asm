@@ -23,14 +23,6 @@ SaffronPokecenter1FTeacherScript:
 SaffronPokecenter1FFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .SolvedKantoPowerCrisis
-	writetext SaffronPokecenter1FFisherText
-	waitbutton
-	closetext
-	end
-
-.SolvedKantoPowerCrisis:
 	writetext SaffronPokecenter1FFisherReturnedMachinePartText
 	waitbutton
 	closetext

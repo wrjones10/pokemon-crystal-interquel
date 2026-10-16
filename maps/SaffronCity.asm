@@ -21,14 +21,6 @@ SaffronCityFlypointCallback:
 SaffronCityLass1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronCityLass1Text
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext SaffronCityLass1Text_ReturnedMachinePart
 	waitbutton
 	closetext
@@ -37,14 +29,6 @@ SaffronCityLass1Script:
 SaffronCityPokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronCityPokefanMText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext SaffronCityPokefanMText_ReturnedMachinePart
 	waitbutton
 	closetext
@@ -59,14 +43,6 @@ SaffronCityCooltrainerFScript:
 SaffronCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext SaffronCityFisherText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext SaffronCityFisherText_ReturnedMachinePart
 	waitbutton
 	closetext

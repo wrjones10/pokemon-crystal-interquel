@@ -14,14 +14,6 @@ CopycatsHouse1FPokefanMScript:
 CopycatsHouse1FPokefanFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext CopycatsHouse1FPokefanFText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext CopycatsHouse1FPokefanFText_ReturnedMachinePart
 	waitbutton
 	closetext

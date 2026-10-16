@@ -9,164 +9,52 @@
 
 PowerPlant_MapScripts:
 	def_scene_scripts
-	scene_script PowerPlantNoop1Scene, SCENE_POWERPLANT_NOOP
-	scene_script PowerPlantNoop2Scene, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
-
+	scene_script PowerPlantNoopScene, SCENE_POWERPLANT_NOOP
+	scene_script PowerPlantNoopScene, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, PowerPlantAvailableCallback
 
-PowerPlantNoop1Scene:
+PowerPlantNoopScene:
 	end
 
-PowerPlantNoop2Scene:
-	end
+PowerPlantAvailableCallback:
+	farscall KantoPowerAvailableScript
+	endcallback
 
-PowerPlantGuardPhoneScript:
-	playsound SFX_CALL
-	showemote EMOTE_SHOCK, POWERPLANT_OFFICER1, 15
-	waitsfx
-	pause 30
-	applymovement POWERPLANT_OFFICER1, PowerPlantOfficer1ApproachGymGuide2Movement
-	turnobject POWERPLANT_GYM_GUIDE1, DOWN
-	turnobject POWERPLANT_GYM_GUIDE2, DOWN
-	opentext
-	writetext PowerPlantOfficer1CeruleanShadyCharacterText
-	waitbutton
-	closetext
-	turnobject POWERPLANT_OFFICER1, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
-	applymovement POWERPLANT_OFFICER1, PowerPlantOfficer1ReturnToPostMovement
-	setscene SCENE_POWERPLANT_NOOP
+KantoPowerAvailableScript::
+; The old completion flag selects normal dialogue in existing Kanto scripts.
+; Keep the old restored-power flag separate from Johto rematch progression.
+	setevent EVENT_RETURNED_MACHINE_PART
+	clearevent EVENT_TRAINERS_IN_CERULEAN_GYM
+	setevent EVENT_CERULEAN_GYM_ROCKET
+	setevent EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
+	setevent EVENT_ROUTE_24_ROCKET
+	setevent EVENT_ROUTE_25_MISTY_BOYFRIEND
+	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
+	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	setevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+; Remove obsolete quest inventory from existing saves, without item renumbering.
+	takeitem MACHINE_PART
 	end
 
 PowerPlantOfficerScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantOfficer1AThiefBrokeInText
-	waitbutton
-	closetext
-	end
-
-.MetManager:
-	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantOfficer1HaveToBeefUpSecurityText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantOfficerWorkingText
 
 PowerPlantGymGuide1Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide1SomeoneStoleAPartText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide1GeneratorUpAndRunningText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantGymGuide1GeneratorUpAndRunningText
 
 PowerPlantGymGuide2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide2PowerPlantUpAndRunningText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide2GeneratorIsRunningAgainText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantGymGuide2PowerPlantUpAndRunningText
 
 PowerPlantOfficer2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantOfficer2ManagerHasBeenSadAndFuriousText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantOfficer2ManagerHasBeenCheerfulText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantOfficer2WorkingText
 
 PowerPlantGymGuide4Script:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide4MagnetTrainConsumesElectricityText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide4WeCanGetMagnetTrainRunningText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer PowerPlantGymGuide4WorkingText
 
 PowerPlantManager:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkitem MACHINE_PART
-	iftrue .FoundMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText
-	waitbutton
-	closetext
-	setevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	clearevent EVENT_CERULEAN_GYM_ROCKET
-	clearevent EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-	setmapscene CERULEAN_GYM, SCENE_CERULEANGYM_GRUNT_RUNS_OUT
-	setscene SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
-	end
-
-.MetManager:
-	writetext PowerPlantManagerIWontForgiveCulpritText
-	waitbutton
-	closetext
-	end
-
-.FoundMachinePart:
-	writetext PowerPlantManagerThatsThePartText
-	promptbutton
-	takeitem MACHINE_PART
-	setevent EVENT_RETURNED_MACHINE_PART
-	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
-	setevent EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
-	setevent EVENT_ROUTE_24_ROCKET
-	setevent EVENT_RESTORED_POWER_TO_KANTO
-	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
-.ReturnedMachinePart:
 	checkevent EVENT_GOT_TM07_ZAP_CANNON
 	iftrue .GotZapCannon
 	writetext PowerPlantManagerTakeThisTMText
@@ -179,7 +67,6 @@ PowerPlantManager:
 .NoRoom:
 	closetext
 	end
-
 .GotZapCannon:
 	writetext PowerPlantManagerMyBelovedGeneratorText
 	waitbutton
@@ -197,61 +84,22 @@ Forest:
 PowerPlantBookshelf:
 	jumpstd DifficultBookshelfScript
 
-PowerPlantOfficer1ApproachGymGuide2Movement:
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step_end
-
-PowerPlantOfficer1ReturnToPostMovement:
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-PowerPlantOfficer1AThiefBrokeInText:
-	text "A thief broke into"
-	line "the POWER PLANT…"
-
-	para "What is the world"
-	line "coming to?"
+PowerPlantOfficerWorkingText:
+	text "We keep a close"
+	line "watch on this"
+	cont "POWER PLANT."
 	done
 
-PowerPlantOfficer1CeruleanShadyCharacterText:
-	text "I just got word"
-	line "from CERULEAN."
-
-	para "It appears that a"
-	line "shady character"
-
-	para "has been loitering"
-	line "around."
+PowerPlantOfficer2WorkingText:
+	text "The MANAGER takes"
+	line "great pride in"
+	cont "this generator."
 	done
 
-PowerPlantOfficer1CouldIAskForYourCooperationText:
-	text "Could I ask for"
-	line "your cooperation?"
-	done
-
-PowerPlantOfficer1HaveToBeefUpSecurityText:
-	text "We'll have to beef"
-	line "up our security"
-	cont "presence."
-	done
-
-PowerPlantGymGuide1SomeoneStoleAPartText:
-	text "Someone made off"
-	line "with a part that's"
-
-	para "essential for the"
-	line "generator."
-
-	para "Without it, the"
-	line "new generator's"
-	cont "useless!"
+PowerPlantGymGuide4WorkingText:
+	text "The MAGNET TRAIN"
+	line "uses electricity"
+	cont "from this plant."
 	done
 
 PowerPlantGymGuide1GeneratorUpAndRunningText:
@@ -272,89 +120,6 @@ PowerPlantGymGuide2PowerPlantUpAndRunningText:
 
 	para "provide power to"
 	line "the MAGNET TRAIN."
-	done
-
-PowerPlantGymGuide2GeneratorIsRunningAgainText:
-	text "The generator's"
-	line "running again!"
-	done
-
-PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
-	text "The POWER PLANT's"
-	line "MANAGER is up"
-	cont "ahead."
-
-	para "But since someone"
-	line "wrecked the gener-"
-	cont "ator, he's been"
-	cont "both sad and"
-	cont "furious…"
-	done
-
-PowerPlantOfficer2ManagerHasBeenCheerfulText:
-	text "Since the gener-"
-	line "ator's been fixed,"
-
-	para "the MANAGER has"
-	line "been cheerful."
-	done
-
-PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
-	text "The MAGNET TRAIN"
-	line "consumes a lot of"
-	cont "electricity."
-
-	para "It can't move if"
-	line "the new generator"
-	cont "isn't operating."
-	done
-
-PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
-	text "All right! We can"
-	line "finally get the"
-
-	para "MAGNET TRAIN"
-	line "running again."
-	done
-
-PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "MANAGER: I, I, I'm"
-	line "ready to blast"
-	cont "someone!"
-
-	para "Who would dare"
-	line "ruin my generator?"
-
-	para "I spent so much"
-	line "time on it!"
-
-	para "If I catch him,"
-	line "he's going to get"
-
-	para "a taste of my ZAP"
-	line "CANNON!"
-	done
-
-PowerPlantManagerIWontForgiveCulpritText:
-	text "MANAGER: I won't"
-	line "forgive him!"
-
-	para "The culprit can"
-	line "cry and apologize,"
-
-	para "but I'll still"
-	line "hammer him!"
-
-	para "Gahahahah!"
-	done
-
-PowerPlantManagerThatsThePartText:
-	text "MANAGER: Ah! Yeah!"
-
-	para "That's the missing"
-	line "PART from my be-"
-	cont "loved generator!"
-	cont "You found it?"
 	done
 
 PowerPlantManagerTakeThisTMText:
@@ -394,7 +159,6 @@ PowerPlant_MapEvents:
 	warp_event  3, 17, ROUTE_10_NORTH, 2
 
 	def_coord_events
-	coord_event  5, 12, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL, PowerPlantGuardPhoneScript
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, PowerPlantBookshelf

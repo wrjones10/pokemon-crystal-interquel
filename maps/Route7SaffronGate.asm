@@ -9,14 +9,6 @@ Route7SaffronGate_MapScripts:
 Route7SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
-	writetext Route7SaffronGuardPowerPlantText
-	waitbutton
-	closetext
-	end
-
-.ReturnedPart:
 	writetext Route7SaffronGuardSeriousText
 	waitbutton
 	closetext

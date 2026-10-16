@@ -1511,7 +1511,9 @@
 	const EVENT_BEAT_YELLOW_ROUTE_4_LASS
 	const EVENT_ROUTE_4_ROAR_TM
 	const EVENT_BOUGHT_MT_MOON_MAGIKARP
-; Unused: next 5 events
+; Misty's TM reward (reserved event ID).
+	const EVENT_GOT_TM52_BUBBLEBEAM
+; Unused: next 4 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

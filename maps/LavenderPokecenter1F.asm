@@ -21,14 +21,6 @@ LavenderPokecenter1FTeacherScript:
 LavenderPokecenter1FYoungsterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext LavenderPokecenter1FYoungsterText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext LavenderPokecenter1FYoungsterText_ReturnedMachinePart
 	waitbutton
 	closetext

@@ -18,14 +18,6 @@ Route10Pokecenter1FGentlemanScript:
 Route10Pokecenter1FGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext Route10Pokecenter1FGymGuideText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext Route10Pokecenter1FGymGuideText_ReturnedMachinePart
 	waitbutton
 	closetext

@@ -13,14 +13,6 @@ Route6SaffronGateNoopScene:
 Route6SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
-	writetext Route6SaffronGuardWelcomeText
-	waitbutton
-	closetext
-	end
-
-.ReturnedPart:
 	writetext Route6SaffronGuardMagnetTrainText
 	waitbutton
 	closetext

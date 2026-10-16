@@ -14,19 +14,12 @@ CeruleanCity_MapScripts:
 
 CeruleanCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CERULEAN
+	farscall KantoPowerAvailableScript
 	endcallback
 
 CeruleanCityCooltrainerMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext CeruleanCityCooltrainerMText1
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
 	writetext CeruleanCityCooltrainerMText2
 	waitbutton
 	closetext
@@ -68,11 +61,6 @@ CeruleanCityCooltrainerFScript:
 CeruleanCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	iftrue .MetCeruleanRocket
-.ReturnedMachinePart:
 	writetext CeruleanCityFisherText
 	waitbutton
 	closetext

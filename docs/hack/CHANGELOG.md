@@ -4,7 +4,7 @@ This is the master record of player-facing changes from the original Pokémon
 Crystal ROM. It describes the current game, including changes that supersede
 earlier behavior, rather than listing every development revision.
 
-Last updated: October 15, 2026.
+Last updated: October 16, 2026.
 
 ## Opening and starting location
 
@@ -468,3 +468,40 @@ when needed to preserve their artwork.
 Crystal's Silver encounter in Mt. Moon is removed, including his overworld
 appearance and forced battle. Mt. Moon's layout and travel routes are retained.
 The new Pallet rival's lab and Route 22 battles are unaffected.
+
+## Cerulean Gym and Kanto power services
+
+- Misty, Crystal's three gym trainers, and the guide are present immediately.
+  The gym layout, trainer placements, parties, and Cascade Badge reward are
+  unchanged. No Misty date or Power Plant visit is needed.
+- The gym Rocket scene, hidden Machine Part, Route 24 Rocket, Route 25 date,
+  and Power Plant investigation are removed. The plant is operational.
+- The Magnet Train still requires the Pass, but no power-restoration quest.
+  Copycat's lost-doll/Pass quest and Lavender's EXPN Card are available without
+  the Machine Part. The manager's one-time Zap Cannon TM gift is retained.
+- The late Johto phone-rematch tiers formerly gated by restored power now use
+  the **Earth Badge**. Their other progression and fight-count checks remain.
+- Existing saves are normalized on entering Cerulean City, its gym, or the
+  Power Plant; obsolete Machine Parts are removed from the Bag.
+
+See [Cerulean Gym notes](cerulean-gym.md) for scope and validation.
+
+## Cascade Badge field and obedience benefits
+
+- The Cascade Badge permits **Cut outside battle**, through both the party menu
+  and direct interaction with a tree. A party Pokémon must still know Cut.
+- It guarantees obedience from traded Pokémon **through level 30**, matching
+  Yellow. Misty explains these benefits when awarding the badge.
+- Hive's existing Cut/level-30 benefits and the higher Johto obedience thresholds
+  remain available. Pokémon with the player's Trainer ID retain normal obedience.
+
+
+## Misty's TM reward
+
+- Misty awards **TM52 (BubbleBeam)** once after the Cascade Badge, with dialogue
+  explaining the move and single-use TMs. If it cannot be received, talk to her
+  again to collect it.
+- BubbleBeam can be taught to Yellow-compatible Gen I Pokémon, all Gen II Water
+  types, and Cleffa, Igglybuff, Smoochum, and Blissey.
+- TM01–TM51 retain their numbers and moves. TM52 expands saved TM inventory and
+  changes HM item IDs again: **start a new save with this build**.

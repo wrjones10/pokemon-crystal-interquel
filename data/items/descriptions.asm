@@ -244,6 +244,7 @@ ItemDescriptions:
 	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama28Desc ; TM51 (uses the move description)
+	dw TeruSama28Desc ; TM52 (uses the move description)
 	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama28Desc
@@ -256,7 +257,6 @@ ItemDescriptions:
 	dw TeruSama29Desc
 	dw TeruSama30Desc
 	dw TeruSama32Desc
-	dw TeruSama33Desc
 	assert_table_length $ff
 
 MasterBallDesc:

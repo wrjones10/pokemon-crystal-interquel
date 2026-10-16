@@ -616,6 +616,7 @@ InitializeEventsScript:
 	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
+	farscall KantoPowerAvailableScript
 	setevent EVENT_INITIALIZED_EVENTS
 	endcallback
 

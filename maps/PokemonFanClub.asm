@@ -55,8 +55,7 @@ PokemonFanClubClefairyGuyScript:
 	opentext
 	checkevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
 	iftrue .GotLostItem
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .FoundClefairyDoll
+	sjump .FoundClefairyDoll
 	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
 	waitbutton
 	closetext

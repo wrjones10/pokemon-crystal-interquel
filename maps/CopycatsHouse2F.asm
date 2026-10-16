@@ -45,8 +45,7 @@ Copycat:
 	variablesprite SPRITE_COPYCAT, SPRITE_KRIS
 .Default_Merge_1:
 	special LoadUsedSpritesGFX
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .TalkAboutLostItem
+	sjump .TalkAboutLostItem
 	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Default_Female_2a

@@ -54,7 +54,7 @@ TrainerSailorHuey:
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
 .Fight3:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkflag ENGINE_EARTHBADGE
 	iftrue .LoadFight3
 .Fight2:
 	checkevent EVENT_BEAT_ELITE_FOUR

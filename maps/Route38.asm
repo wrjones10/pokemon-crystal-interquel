@@ -75,7 +75,7 @@ TrainerLassDana1:
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
 .Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkflag ENGINE_EARTHBADGE
 	iftrue .LoadFight4
 .Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -211,7 +211,7 @@ TrainerSchoolboyChad1:
 	ifequal 1, .Fight1
 	ifequal 0, .LoadFight0
 .Fight4:
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkflag ENGINE_EARTHBADGE
 	iftrue .LoadFight4
 .Fight3:
 	checkevent EVENT_BEAT_ELITE_FOUR
