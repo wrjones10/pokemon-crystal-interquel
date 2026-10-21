@@ -20,7 +20,6 @@ CinnabarIslandBlue:
 	playsound SFX_WARP_TO
 	applymovement CINNABARISLAND_BLUE, CinnabarIslandBlueTeleport
 	disappear CINNABARISLAND_BLUE
-	clearevent EVENT_VIRIDIAN_GYM_BLUE
 	end
 
 CinnabarIslandGymSign:
@@ -99,12 +98,8 @@ CinnabarIslandBlueText:
 	line "opponent, it makes"
 	cont "me want to battle."
 
-	para "If you want to"
-	line "battle me, come to"
-	cont "the VIRIDIAN GYM."
-
-	para "I'll take you on"
-	line "then."
+	para "For now, I'll"
+	line "keep training."
 	done
 
 CinnabarIslandGymSignText:

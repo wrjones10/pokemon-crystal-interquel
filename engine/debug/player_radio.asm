@@ -50,7 +50,7 @@ DebugPlayerRadioScript::
 	setevent EVENT_BEAT_JANINE
 	setevent EVENT_BEAT_SABRINA
 	setevent EVENT_BEAT_BLAINE
-	setevent EVENT_BEAT_BLUE
+	setevent EVENT_BEAT_BERTHA
 	setevent EVENT_BEAT_ELITE_FOUR
 	setflag ENGINE_CREDITS_SKIP
 

@@ -4,7 +4,7 @@ This is the master record of player-facing changes from the original Pokémon
 Crystal ROM. It describes the current game, including changes that supersede
 earlier behavior, rather than listing every development revision.
 
-Last updated: October 16, 2026.
+Last updated: October 21, 2026.
 
 ## Opening and starting location
 
@@ -519,3 +519,20 @@ See [Cerulean Gym notes](cerulean-gym.md) for scope and validation.
   They can be edited independently. Move AI initially matches Route 22.
 
 See [Cerulean rival notes](cerulean-rival.md) for implementation and validation.
+
+
+## Viridian Gym Leader Bertha
+
+- Bertha replaces Blue as Viridian Gym Leader, with updated gym dialogue,
+  guide dialogue, city sign, and nearby resident's dialogue. Blue's overworld
+  and battle artwork are temporary placeholders.
+- Bertha and the guide are always present inside; visiting Blue on Cinnabar
+  is no longer required. The entrance officer still requires the other seven
+  Kanto badges. Bertha awards the Earth Badge once after her initial defeat.
+- `BerthaInitial` (`BERTHA1`) and `BerthaRematch` (`BERTHA_REMATCH`) are separate
+  editable parties in `data/trainers/parties.asm`. Both initially copy Blue's
+  former six-Pokémon team. No rematch trigger or unlock is added.
+- Blue's original initial and rematch teams remain under `BlueGroup` and
+  `BlueRematch` in the same file, unused and preserved for future use.
+- Existing trainer and victory-flag IDs are retained. A save with the Earth
+  Badge already earned will treat Bertha's initial battle as completed.

@@ -74,20 +74,7 @@ ViridianCityCoffeeGramps:
 	end
 
 ViridianCityGrampsNearGym:
-	faceplayer
-	opentext
-	checkevent EVENT_BLUE_IN_CINNABAR
-	iftrue .BlueReturned
-	writetext ViridianCityGrampsNearGymText
-	waitbutton
-	closetext
-	end
-
-.BlueReturned:
-	writetext ViridianCityGrampsNearGymBlueReturnedText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer ViridianCityGrampsNearGymText
 
 ViridianCityDreamEaterFisher:
 	faceplayer
@@ -167,20 +154,12 @@ ViridianCityCoffeeGrampsDoubtedText:
 	done
 
 ViridianCityGrampsNearGymText:
-	text "This GYM didn't"
-	line "have a LEADER"
-	cont "until recently."
+	text "BERTHA is the new"
+	line "LEADER of this"
+	cont "GYM."
 
-	para "A young man from"
-	line "PALLET became the"
-
-	para "LEADER, but he's"
-	line "often away."
-	done
-
-ViridianCityGrampsNearGymBlueReturnedText:
-	text "Are you going to"
-	line "battle the LEADER?"
+	para "Are you going to"
+	line "challenge her?"
 
 	para "Good luck to you."
 	line "You'll need it."
@@ -234,10 +213,7 @@ ViridianCitySignText:
 ViridianGymSignText:
 	text "VIRIDIAN CITY"
 	line "#MON GYM"
-	cont "LEADER: …"
-
-	para "The rest of the"
-	line "text is illegible…"
+	cont "LEADER: BERTHA"
 	done
 
 ViridianCityWelcomeSignText:

@@ -1,5 +1,5 @@
 	object_const_def
-	const VIRIDIANGYM_BLUE
+	const VIRIDIANGYM_BERTHA
 	const VIRIDIANGYM_GYM_GUIDE
 
 ViridianGym_MapScripts:
@@ -7,31 +7,31 @@ ViridianGym_MapScripts:
 
 	def_callbacks
 
-ViridianGymBlueScript:
+ViridianGymBerthaScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
-	writetext LeaderBlueBeforeText
+	writetext LeaderBerthaBeforeText
 	waitbutton
 	closetext
-	winlosstext LeaderBlueWinText, 0
-	loadtrainer BLUE, BLUE1
+	winlosstext LeaderBerthaWinText, 0
+	loadtrainer BERTHA, BERTHA1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_BLUE
+	setevent EVENT_BEAT_BERTHA
 	opentext
 	writetext Text_ReceivedEarthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
-	writetext LeaderBlueAfterText
+	writetext LeaderBerthaAfterText
 	waitbutton
 	closetext
 	end
 
 .FightDone:
-	writetext LeaderBlueEpilogueText
+	writetext LeaderBerthaEpilogueText
 	waitbutton
 	closetext
 	end
@@ -39,7 +39,7 @@ ViridianGymBlueScript:
 ViridianGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BLUE
+	checkevent EVENT_BEAT_BERTHA
 	iftrue .ViridianGymGuideWinScript
 	writetext ViridianGymGuideText
 	waitbutton
@@ -58,53 +58,30 @@ ViridianGymStatue:
 	jumpstd GymStatue1Script
 
 .Beaten:
-	gettrainername STRING_BUFFER_4, BLUE, BLUE1
+	gettrainername STRING_BUFFER_4, BERTHA, BERTHA1
 	jumpstd GymStatue2Script
 
-LeaderBlueBeforeText:
-	text "BLUE: Yo! Finally"
-	line "got here, huh?"
+LeaderBerthaBeforeText:
+	text "BERTHA: Welcome."
 
-	para "I wasn't in the"
-	line "mood at CINNABAR,"
+	para "I'm BERTHA, the"
+	line "VIRIDIAN GYM"
+	cont "LEADER."
 
-	para "but now I'm ready"
-	line "to battle you."
+	para "You've earned"
+	line "seven KANTO"
+	cont "BADGES already."
 
-	para "…"
-
-	para "You're telling me"
-	line "you conquered all"
-	cont "the GYMS in JOHTO?"
-
-	para "Heh! JOHTO's GYMS"
-	line "must be pretty"
-	cont "pathetic then."
-
-	para "Hey, don't worry"
-	line "about it."
-
-	para "I'll know if you"
-	line "are good or not by"
-
-	para "battling you right"
-	line "now."
-
-	para "Ready, JOHTO"
-	line "CHAMP?"
+	para "Now, show me what"
+	line "you and your"
+	cont "#MON can do!"
 	done
 
-LeaderBlueWinText:
-	text "BLUE: What?"
+LeaderBerthaWinText:
+	text "BERTHA: Well done!"
 
-	para "How the heck did I"
-	line "lose to you?"
-
-	para "…"
-
-	para "Tch, all right…"
-	line "Here, take this--"
-	cont "it's EARTHBADGE."
+	para "You've earned"
+	line "the EARTHBADGE."
 	done
 
 Text_ReceivedEarthBadge:
@@ -112,48 +89,36 @@ Text_ReceivedEarthBadge:
 	line "EARTHBADGE."
 	done
 
-LeaderBlueAfterText:
-	text "BLUE: …"
+LeaderBerthaAfterText:
+	text "BERTHA: Your bond"
+	line "with your #MON"
+	cont "is impressive."
 
-	para "All right, I was"
-	line "wrong. You're the"
-
-	para "real deal. You are"
-	line "a good trainer."
-
-	para "But I'm going to"
-	line "beat you someday."
-
-	para "Don't you forget"
-	line "it!"
+	para "Keep training"
+	line "together. There's"
+	cont "always more to"
+	cont "learn!"
 	done
 
-LeaderBlueEpilogueText:
-	text "BLUE: Listen, you."
+LeaderBerthaEpilogueText:
+	text "BERTHA: It's good"
+	line "to see you again."
 
-	para "You'd better not"
-	line "lose until I beat"
-	cont "you. Got it?"
+	para "Keep growing"
+	line "alongside your"
+	cont "#MON!"
 	done
 
 ViridianGymGuideText:
 	text "Yo, CHAMP in"
 	line "making!"
 
-	para "How's it going?"
-	line "Looks like you're"
-	cont "on a roll."
+	para "BERTHA is the new"
+	line "GYM LEADER here."
 
-	para "The GYM LEADER is"
-	line "a guy who battled"
-
-	para "the CHAMPION three"
-	line "years ago."
-
-	para "He's no pushover."
-
-	para "Give it everything"
-	line "you've got!"
+	para "She's no pushover."
+	line "Give it everything"
+	cont "you've got!"
 	done
 
 ViridianGymGuideWinText:
@@ -181,5 +146,5 @@ ViridianGym_MapEvents:
 	bg_event  6, 13, BGEVENT_READ, ViridianGymStatue
 
 	def_object_events
-	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBlueScript, EVENT_VIRIDIAN_GYM_BLUE
-	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, EVENT_VIRIDIAN_GYM_BLUE
+	object_event  5,  3, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianGymBerthaScript, -1
+	object_event  7, 13, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianGymGuideScript, -1

@@ -66,7 +66,7 @@ BTTrainerClassGenders:
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
 	db MALE   ; RED
-	db MALE   ; BLUE
+	db FEMALE ; BERTHA
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	assert_table_length NUM_TRAINER_CLASSES - 2 ; exclude MYSTICALMAN and PALLET_RIVAL

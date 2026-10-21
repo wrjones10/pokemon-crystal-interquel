@@ -66,7 +66,7 @@ TrainerPicPointers::
 	dba_pic TwinsPic
 	dba_pic PokefanfPic
 	dba_pic RedPic
-	dba_pic BluePic
+	dba_pic BluePic ; BERTHA placeholder artwork
 	dba_pic OfficerPic
 	dba_pic GruntfPic
 	dba_pic MysticalmanPic

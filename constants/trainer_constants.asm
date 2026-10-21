@@ -725,9 +725,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass RED ; 3f
 	const RED1
 
-	trainerclass BLUE ; 40
-	const BLUE1
-	const BLUE_REMATCH
+	trainerclass BERTHA ; 40
+	const BERTHA1
+	const BERTHA_REMATCH
 
 	trainerclass OFFICER ; 41
 	const KEITH

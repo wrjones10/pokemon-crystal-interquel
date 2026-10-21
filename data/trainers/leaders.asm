@@ -28,5 +28,5 @@ KantoGymLeaders:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db BERTHA
 	db -1
