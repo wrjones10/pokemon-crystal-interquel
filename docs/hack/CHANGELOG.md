@@ -510,6 +510,8 @@ See [Cerulean Gym notes](cerulean-gym.md) for scope and validation.
 
 - The new rival challenges the player while heading north from Cerulean City
   toward Route 24, following Yellow's approach, dialogue, and departure sequence.
+- The triggers span the narrow bridge; Crystal's wider approach cannot bypass
+  them. The rival's starting position and approach are adjusted to match.
 - A loss allows a retry; after a win the encounter does not repeat. It does not
   require the optional Route 22 battle or either local gym badge.
 - Three separate starter-specific parties initially copy the current Route 22

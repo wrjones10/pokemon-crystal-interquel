@@ -2,11 +2,14 @@
 
 The new Pallet rival challenges the player at the north end of Cerulean City,
 before Route 24. This follows Yellow's encounter, which actually takes place
-on the Cerulean City map rather than Route 24. Red uses the same trigger tiles
-and movements; Yellow's dialogue is used here, without naming the rival Blue.
+on the Cerulean City map rather than Route 24. Red uses the same original triggers and movements as Yellow. Yellow's dialogue
+is used here, without naming the rival Blue; positions are adapted to Crystal's
+wider bridge approach.
 
-Stepping onto either bridge-approach tile, (20, 6) or (21, 6), reveals the rival
-in that lane at y=2. He walks three tiles south, faces the player, and battles.
+Stepping onto either narrow bridge tile, (20, 3) or (21, 3), reveals the rival
+in that lane at y=0. He walks two tiles south, faces the player, and battles.
+These triggers cover both walking lanes. The original Yellow trigger row at
+y=6 can be bypassed on the right in Crystal, so it is no longer used.
 After a win he describes visiting Bill, steps into the other lane, walks six
 tiles south, and disappears. Encounter/departure music surrounds the standard
 trainer battle music. Losing causes the normal blackout and leaves the battle
@@ -55,6 +58,7 @@ python3 tools/verify_route34.py
 The rival checker executes compiled scripts for both lanes, all three starter
 choices, wins/losses, completed/uncompleted encounters, and the lab prerequisite
 (48 states per ROM), including subsequent retries and repeat visits. It checks
+that every walking path from town to the north exit crosses a trigger,
 collision and player/NPC overlap throughout approach/departure, correct facing,
 trainer selection, all nine rival party records, and walking-frame allocation
 for six player forms. Existing city and Route 24 geometry are not modified.

@@ -32,10 +32,10 @@ CeruleanCityRivalBattle:
 	disappear CERULEANCITY_RIVAL
 	readvar VAR_XCOORD
 	ifequal 21, .RightLane
-	moveobject CERULEANCITY_RIVAL, 20, 2
+	moveobject CERULEANCITY_RIVAL, 20, 0
 	sjump .Approach
 .RightLane:
-	moveobject CERULEANCITY_RIVAL, 21, 2
+	moveobject CERULEANCITY_RIVAL, 21, 0
 .Approach:
 ; Reload this group's graphics before revealing BLUE, including connected entries.
 	special RefreshSprites
@@ -88,7 +88,6 @@ CeruleanCityRivalNoop:
 	end
 
 CeruleanCityRivalApproach:
-	step DOWN
 	step DOWN
 	step DOWN
 	step_end
@@ -430,8 +429,10 @@ CeruleanCity_MapEvents:
 	warp_event 25, 29, CERULEAN_MART, 2
 
 	def_coord_events
-	coord_event 20, 6, -1, CeruleanCityRivalBattle
-	coord_event 21, 6, -1, CeruleanCityRivalBattle
+; Crystal's wider approach allows bypassing Yellow's y=6 trigger row.
+; These tiles span the narrow bridge, so both northbound lanes are covered.
+	coord_event 20, 3, -1, CeruleanCityRivalBattle
+	coord_event 21, 3, -1, CeruleanCityRivalBattle
 
 	def_bg_events
 	bg_event 23, 23, BGEVENT_READ, CeruleanCitySign
@@ -451,4 +452,4 @@ CeruleanCity_MapEvents:
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
-	object_event 20, 2, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityRivalNoop, EVENT_CERULEAN_RIVAL_HIDDEN
+	object_event 20, 0, SPRITE_BLUE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityRivalNoop, EVENT_CERULEAN_RIVAL_HIDDEN

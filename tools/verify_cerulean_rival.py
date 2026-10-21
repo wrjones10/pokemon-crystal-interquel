@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Check the compiled Cerulean bridge rival sequence and its walking paths."""
+from collections import deque
 from itertools import product
 from verify_route2 import Map, ROOT
 from verify_route22_rival import Check
@@ -9,18 +10,37 @@ def verify(stem):
     rom = Check(stem)
     city = Map('CeruleanCity', 20, 18, 'kanto', 'CERULEAN_CITY')
     source = (ROOT / 'maps/CeruleanCity.asm').read_text()
-    assert 'coord_event 20, 6, -1, CeruleanCityRivalBattle' in source
-    assert 'coord_event 21, 6, -1, CeruleanCityRivalBattle' in source
+    assert 'coord_event 20, 3, -1, CeruleanCityRivalBattle' in source
+    assert 'coord_event 21, 3, -1, CeruleanCityRivalBattle' in source
     data = rom.data('CeruleanCity_MapEvents')
     pos = 2
     count = data[pos]; pos += 1 + count * 5
     assert data[pos] == 2; pos += 1
-    assert [(data[pos+i*8+2], data[pos+i*8+1]) for i in range(2)] == [(20, 6), (21, 6)]
+    assert [(data[pos+i*8+2], data[pos+i*8+1]) for i in range(2)] == [(20, 3), (21, 3)]
+    triggers = {(data[pos+i*8+2], data[pos+i*8+1]) for i in range(2)}
+    # Test event placement, not just behavior after manually invoking the script.
+    # Ignore NPCs so wandering city residents cannot hide a terrain bypass.
+    def reachable(blocked):
+        start = (19, 22) # immediately outside the Pokemon Center
+        seen = {start}; queue = deque([start])
+        while queue:
+            x, y = queue.popleft()
+            for dx, dy in ((0, -1), (0, 1), (-1, 0), (1, 0)):
+                point = (x+dx, y+dy)
+                if point in seen or point in blocked or not city.in_bounds(point): continue
+                if city.collision(point) not in ('FLOOR', 'TALL_GRASS', 'LADDER', 'DOOR'): continue
+                seen.add(point); queue.append(point)
+        return seen
+    north_exit = {(20, 0), (21, 0)}
+    assert north_exit <= reachable(set()), 'bridge must remain traversable after winning'
+    assert not north_exit & reachable(triggers), 'northbound path bypasses rival triggers'
+    assert triggers <= reachable(set()), 'both triggers must be reachable from town'
+    assert north_exit & reachable({(20, 6), (21, 6)}), 'old Yellow coordinates reproduce the bypass'
     pos += 16
     count = data[pos]; pos += 1 + count * 5
     assert data[pos] == 7; pos += 1
     obj = data[pos+6*13:pos+7*13]
-    assert (obj[0], obj[2]-4, obj[1]-4) == (7, 20, 2)
+    assert (obj[0], obj[2]-4, obj[1]-4) == (7, 20, 0)
     hidden = int.from_bytes(obj[11:13], 'little')
     assert rom.data('CeruleanCityHideRivalCallback')[:3] == bytes([0x6e, 8, 0x90])
     start = rom.data('CeruleanCityRivalBattle')
@@ -78,9 +98,9 @@ def verify(stem):
         checks = checks[1:]
         if starter == 'BULBASAUR': flags.add(checks[0])
         if starter == 'CHARMANDER': flags.add(checks[1])
-        pc = address % 0x4000; value = 0; rival = (20, 2)
+        pc = address % 0x4000; value = 0; rival = (20, 0)
         visible = False; trainer = None; battles = 0; facing = {}; refreshed = False
-        player = (lane, 6)
+        player = (lane, 3)
         def word(at): return int.from_bytes(mem[at:at+2], 'little')
         for _ in range(100):
             op = mem[pc]; pc += 1
@@ -118,7 +138,7 @@ def verify(stem):
                 facing[mem[pc]] = mem[pc+1]; pc += 2
             elif op == 0x5e: trainer = tuple(mem[pc:pc+2]); pc += 2
             elif op == 0x5f:
-                assert rival == (lane, 5) and visible
+                assert rival == (lane, 2) and visible
                 assert facing[0] == 1 and facing[8] == 0
                 battles += 1
             elif op == 0x60:
@@ -140,10 +160,10 @@ def verify(stem):
         assert not visible
         if eligible:
             assert trainer == (0x44, {'SQUIRTLE':7,'BULBASAUR':8,'CHARMANDER':9}[starter])
-            if won: assert rival == (41-lane, 11)
+            if won: assert rival == (41-lane, 8)
             retry = run(lane, starter, True, completed=won)
             assert retry[1] == int(not won)
-    print(f'{stem}: 48 encounter states, retry/repeat behavior, both movement paths, nine parties and six sprite forms passed')
+    print(f'{stem}: north-exit trigger coverage, 48 encounter states, retry/repeat behavior, both movement paths, nine parties and six sprite forms passed')
 
 
 if __name__ == '__main__':
