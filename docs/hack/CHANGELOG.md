@@ -505,3 +505,15 @@ See [Cerulean Gym notes](cerulean-gym.md) for scope and validation.
   types, and Cleffa, Igglybuff, Smoochum, and Blissey.
 - TM01–TM51 retain their numbers and moves. TM52 expands saved TM inventory and
   changes HM item IDs again: **start a new save with this build**.
+
+## Cerulean bridge rival battle
+
+- The new rival challenges the player while heading north from Cerulean City
+  toward Route 24, following Yellow's approach, dialogue, and departure sequence.
+- A loss allows a retry; after a win the encounter does not repeat. It does not
+  require the optional Route 22 battle or either local gym badge.
+- Three separate starter-specific parties initially copy the current Route 22
+  teams: level 7 Nidoran♀ and the rival's level 8 starter, without held items.
+  They can be edited independently. Move AI initially matches Route 22.
+
+See [Cerulean rival notes](cerulean-rival.md) for implementation and validation.

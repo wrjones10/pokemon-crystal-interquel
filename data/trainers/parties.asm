@@ -404,7 +404,7 @@ MistyGroup:
 	db "MISTY@", TRAINERTYPE_MOVES
 	db 18, STARYU,     TACKLE, HARDEN, RAPID_SPIN, WATER_GUN
 	db 19, PSYDUCK,    WATER_GUN, PSYCH_UP, DISABLE, CONFUSION
-	db 21, STARMIE,    BUBBLEBEAM, RAPID_SPIN, HARDEN, RECOVER
+	db 21, STARMIE,    BUBBLEBEAM, RAPID_SPIN, HARDEN
 	db -1 ; end
 
 MistyRematch:
@@ -2279,7 +2279,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (18)
 	db "DIANA@", TRAINERTYPE_NORMAL
-	db 17, PSYDUCK
+	db 17, POLIWAG
 	db -1 ; end
 
 	; SWIMMERF (19)
@@ -3809,4 +3809,22 @@ PalletRivalGroup:
 	db "???@", TRAINERTYPE_ITEM
 	db 7, NIDORAN_F, NO_ITEM
 	db 8, SQUIRTLE, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL_CERULEAN_BULBASAUR -- Cerulean bridge battle (editable Route 22 copy)
+	db "???@", TRAINERTYPE_ITEM
+	db 16, NIDORINA, NO_ITEM
+	db 15, BULBASAUR, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL_CERULEAN_CHARMANDER -- Cerulean bridge battle (editable Route 22 copy)
+	db "???@", TRAINERTYPE_ITEM
+	db 16, NIDORINA, NO_ITEM
+	db 15, CHARMANDER, NO_ITEM
+	db -1 ; end
+
+	; PALLET_RIVAL_CERULEAN_SQUIRTLE -- Cerulean bridge battle (editable Route 22 copy)
+	db "???@", TRAINERTYPE_ITEM
+	db 16, NIDORINA, NO_ITEM
+	db 15, SQUIRTLE, NO_ITEM
 	db -1 ; end

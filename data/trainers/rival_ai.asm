@@ -13,6 +13,9 @@ PalletRivalAIMoveWeights:
 	rival_ai PALLET_RIVAL_ROUTE22_BULBASAUR, AI_BASIC | AI_SETUP
 	rival_ai PALLET_RIVAL_ROUTE22_CHARMANDER, AI_BASIC | AI_SETUP
 	rival_ai PALLET_RIVAL_ROUTE22_SQUIRTLE, AI_BASIC | AI_SETUP
+	rival_ai PALLET_RIVAL_CERULEAN_BULBASAUR, AI_BASIC | AI_SETUP
+	rival_ai PALLET_RIVAL_CERULEAN_CHARMANDER, AI_BASIC | AI_SETUP
+	rival_ai PALLET_RIVAL_CERULEAN_SQUIRTLE, AI_BASIC | AI_SETUP
 	db 0 ; unlisted parties use their trainer class's default AI
 
 ; AIChooseMove reads both tables using BANK(TrainerClassAttributes).

@@ -85,10 +85,12 @@ CeruleanGroupSprites:
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
-	db SPRITE_ROCKET
+	db SPRITE_BLUE ; replaces the removed quest Rocket; same walking-sprite slot
 	db SPRITE_MISTY
 	db SPRITE_POKE_BALL
 	db SPRITE_SLOWPOKE
+
+	assert @ - CeruleanGroupSprites == MAX_OUTDOOR_SPRITES
 
 SaffronGroupSprites:
 	db SPRITE_SUICUNE

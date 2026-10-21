@@ -1513,7 +1513,10 @@
 	const EVENT_BOUGHT_MT_MOON_MAGIKARP
 ; Misty's TM reward (reserved event ID).
 	const EVENT_GOT_TM52_BUBBLEBEAM
-; Unused: next 4 events
+; Cerulean bridge rival battle (reserved event IDs).
+	const EVENT_BATTLED_CERULEAN_RIVAL
+	const EVENT_CERULEAN_RIVAL_HIDDEN
+; Unused: next 2 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800
